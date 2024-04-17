@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: April 16, 2024
-;; Version: 0.0.1
+;; Modified: April 17, 2024
+;; Version: 0.2.0
 ;; Package-Requires: ((emacs "26.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -181,6 +181,77 @@
    `(evil-ex-substitute-matches     ((,class (:foreground ,c1-dim :strike-through t :inherit bold))))
    `(evil-ex-substitute-replacement ((,class (:foreground ,c4-dim :inherit bold))))
 
+;;;;;; diredfl
+   `(diredfl-dir-name               ((,class (:foreground ,c6 :background ,c6-light :inherit (bold variable-pitch)))))
+   `(diredfl-number                 ((,class (:foreground ,c1-dim))))
+   `(diredfl-symlink                ((,class (:foreground ,c0))))
+   `(diredfl-no-priv                ((,class (:foreground ,c3))))
+   `(diredfl-dir-priv               ((,class (:foreground ,c4))))
+   `(diredfl-read-priv              ((,class (:foreground ,c5))))
+   `(diredfl-rare-priv              ((,class (:foreground ,c5))))
+   `(diredfl-link-priv              ((,class (:foreground ,c5))))
+   `(diredfl-file-name              ((,class (:foreground ,c6 :inherit variable-pitch))))
+   `(diredfl-exec-priv              ((,class (:foreground ,c2))))
+   `(diredfl-date-time              ((,class (:foreground ,c3-dim :underline t :slant italic))))
+   `(diredfl-write-priv             ((,class (:foreground ,c2-dim))))
+   `(diredfl-other-priv             ((,class (:foreground ,c1-dim))))
+   `(diredfl-file-suffix            ((,class (:foreground ,c3-dark :inherit variable-pitch))))
+   `(diredfl-dir-heading            ((,class (:foreground ,c1 :background ,c4-dim :box t))))
+   `(diredfl-autofile-name          ((,class (:foreground ,c5-dark))))
+   `(diredfl-flag-mark              ((,class (:foreground ,c4-dim :background ,c4-light))))
+   `(diredfl-flag-mark-line         ((,class (:slant italic :background ,c4-light))))
+   `(diredfl-executable-tag         ((,class (:foreground ,c3-light))))
+   `(diredfl-ignored-file-name      ((,class (:foreground ,c2-dim))))
+   `(diredfl-deletion               ((,class (:foreground ,c6-dark :background ,c6-light))))
+   `(diredfl-deletion-file-name     ((,class (:slant italic :strike-through ,c0-dim))))
+   `(diredfl-tagged-autofile-name   ((,class (:foreground ,c2-dim))))
+   `(diredfl-compressed-file-name   ((,class (:foreground ,c2-dim))))
+   `(diredfl-compressed-file-suffix ((,class (:foreground ,c2-dim))))
+
+;;;;;; dired-subtree
+   `(dired-subtree-depth-1-face ((,class (:background ,c6-light))))
+   `(dired-subtree-depth-2-face ((,class (:background ,c5-light))))
+   `(dired-subtree-depth-3-face ((,class (:background ,c4-light))))
+   `(dired-subtree-depth-4-face ((,class (:background ,c3-light))))
+   `(dired-subtree-depth-5-face ((,class (:background ,c2-light))))
+   `(dired-subtree-depth-6-face ((,class (:background ,c1-light))))
+
+;;;;;; Ivy
+   `(ivy-action                      ((,class (:foreground ,fg :slant italic))))
+   `(ivy-completion-annotations      ((,class (:foreground ,c1-dim))))
+   `(ivy-confirm-face                ((,class (:foreground ,c0-dim))))
+   `(ivy-current-match               ((,class (:underline (:line-width -1 :color ,c3-dark) :inherit bold))))
+   `(ivy-cursor                      ((,class (:foreground ,bg :background ,fg))))
+   `(ivy-grep-info                   ((,class (:foreground ,fg))))
+   `(ivy-grep-line-number            ((,class (:foreground ,fg))))
+   `(ivy-highlight-face              ((,class (:foreground ,c2 :slant italic))))
+   `(ivy-match-required-face         ((,class (:foreground ,c6-dark))))
+   `(ivy-minibuffer-match-face-1     ((,class (:foreground ,c6-dim :underline t))))
+   `(ivy-minibuffer-match-face-2     ((,class (:foreground ,c5-dim :underline t))))
+   `(ivy-minibuffer-match-face-3     ((,class (:foreground ,c4-dim :underline t))))
+   `(ivy-minibuffer-match-face-4     ((,class (:foreground ,c3-dim :underline t))))
+   `(ivy-minibuffer-match-highlight  ((,class (:foreground ,c2-dim :box t))))
+   `(ivy-modified-buffer             ((,class (:foreground ,fg :inherit bold))))
+   `(ivy-modified-outside-buffer     ((,class (:foreground ,fg :inherit bold))))
+   `(ivy-org                         ((,class (:foreground ,fg))))
+   `(ivy-prompt-match                ((,class (:inherit ivy-current-match))))
+   `(ivy-remote                      ((,class (:foreground ,c3-dark))))
+   `(ivy-separator                   ((,class (:foreground ,c5-dark))))
+   `(ivy-subdir                      ((,class (:foreground ,fg))))
+   `(ivy-virtual                     ((,class (:foreground ,c4-dark :slant italic))))
+   `(ivy-yanked-word                 ((,class (:foreground ,c2-dark))))
+
+;;;;;; Swiper
+   `(swiper-background-match-face-1  ((,class (:foreground ,c0))))
+   `(swiper-background-match-face-2  ((,class (:foreground ,c1))))
+   `(swiper-background-match-face-3  ((,class (:foreground ,c2))))
+   `(swiper-background-match-face-4  ((,class (:foreground ,c3))))
+   `(swiper-line-face                ((,class (:underline ,c4-dim :extend t))))
+   `(swiper-match-face-1             ((,class (:foreground ,c0 :inherit bold))))
+   `(swiper-match-face-2             ((,class (:foreground ,c1 :inherit bold))))
+   `(swiper-match-face-3             ((,class (:foreground ,c2 :inherit bold))))
+   `(swiper-match-face-4             ((,class (:foreground ,c3 :inherit bold))))
+
 ;;;;;; rainbow-delimiter
    `(rainbow-delimiters-base-face       ((,class (:foreground ,c0-dark))))
    `(rainbow-delimiters-depth-1-face    ((,class (:foreground ,c6))))
@@ -195,6 +266,96 @@
    `(rainbow-delimiters-unmatched-face  ((,class (:foreground ,c6-dark))))
    `(rainbow-delimiters-mismatched-face ((,class (:foreground ,c6-dark))))
    `(rainbow-delimiters-base-error-face ((,class (:foreground ,c6-dark))))
+
+;;;;;; Line Numbers
+   `(line-number              ((,class (:foreground ,c6-dim :background ,c2-light :inherit bold))))
+   `(line-number-current-line ((,class (:foreground ,c6-dim :background ,c0-light :box (:line-width -1) :inherit bold))))
+
+;;;;;; isearch, occur
+   `(isearch        ((,class (:foreground ,c6-dim :background ,c6-light))))
+   `(isearch-fail   ((,class (:foreground ,c0-dim :background ,c0-light))))
+   `(lazy-highlight ((,class (:foreground ,fg :background ,c3-light))))
+   `(match          ((,class (:foreground ,c4-dim :background ,c4-light))))
+   `(query-replace  ((,class (:foreground ,c2-dim :background ,c2-light))))
+
+;;;;;; xref
+   `(xref-file-header  ((,class (:foreground ,c6 :weight bold :height 1.15 :inherit variable-pitch))))
+   `(xref-match        ((,class (:background ,c6-light :underline (:color ,c0)))))
+   `(xref-line-number  ((,class (:foreground ,c4-dim))))
+   `(info-xref-visited ((,class (:underline (:color ,c2-dim)))))
+
+;;;;;; imenu-list
+   `(imenu-list-entry-face            ((,class (:inherit variable-pitch :foreground ,fg))))
+   `(imenu-list-entry-face-3          ((,class (:inherit variable-pitch :foreground ,c3))))
+   `(imenu-list-entry-face-2          ((,class (:inherit variable-pitch :foreground ,c4))))
+   `(imenu-list-entry-face-1          ((,class (:inherit variable-pitch :foreground ,c5))))
+   `(imenu-list-entry-face-0          ((,class (:inherit variable-pitch :foreground ,c6))))
+   `(imenu-list-entry-subalist-face-3 ((,class (:inherit variable-pitch :foreground ,c3-dim :underline t))))
+   `(imenu-list-entry-subalist-face-2 ((,class (:inherit variable-pitch :foreground ,c4-dim :underline t))))
+   `(imenu-list-entry-subalist-face-1 ((,class (:inherit variable-pitch :foreground ,c5-dim :underline t))))
+   `(imenu-list-entry-subalist-face-0 ((,class (:inherit variable-pitch :foreground ,c6-dim :underline t))))
+
+;;;;;; Outline
+   `(outline-1 ((,class (:foreground ,c6 :background ,c6-light :inherit variable-pitch))))
+   `(outline-2 ((,class (:foreground ,c5 :background ,c5-light :inherit variable-pitch))))
+   `(outline-3 ((,class (:foreground ,c4 :background ,c4-light :inherit variable-pitch))))
+   `(outline-4 ((,class (:foreground ,c3 :background ,c3-light :inherit variable-pitch))))
+   `(outline-5 ((,class (:foreground ,c2 :background ,c2-light :inherit variable-pitch))))
+   `(outline-6 ((,class (:foreground ,c1 :background ,c1-light :inherit variable-pitch))))
+   `(outline-7 ((,class (:foreground ,c0 :background ,c0-light :inherit variable-pitch))))
+   `(outline-8 ((,class (:foreground ,c6 :background ,c6-light :inherit variable-pitch))))
+   `(outline-minor-0 ((,class (:background ,bg))))
+   `(outline-minor-1 ((,class (:foreground ,c6-dim :background ,c6-light :inherit variable-pitch))))
+   `(outline-minor-2 ((,class (:foreground ,c5-dim :background ,c5-light :inherit variable-pitch))))
+   `(outline-minor-3 ((,class (:foreground ,c4-dim :background ,c4-light :inherit variable-pitch))))
+   `(outline-minor-4 ((,class (:foreground ,c3-dim :background ,c3-light :inherit variable-pitch))))
+   `(outline-minor-5 ((,class (:foreground ,c2-dim :background ,c2-light :inherit variable-pitch))))
+   `(outline-minor-6 ((,class (:foreground ,c1-dim :background ,c1-light :inherit variable-pitch))))
+   `(outline-minor-7 ((,class (:foreground ,c0-dim :background ,c0-light :inherit variable-pitch))))
+   `(outline-minor-8 ((,class (:foreground ,c6-dim :background ,c6-light :inherit variable-pitch))))
+
+;;;;;; markdown
+   `(markdown-header-face-1 ((,class :foreground ,c6)))
+   `(markdown-header-face-2 ((,class :foreground ,c5)))
+   `(markdown-header-face-3 ((,class :foreground ,c4)))
+   `(markdown-header-face-4 ((,class :foreground ,c3)))
+   `(markdown-header-face-5 ((,class :foreground ,c2)))
+   `(markdown-header-face-6 ((,class :foreground ,c1)))
+   `(markdown-link-face ((,class (:inherit org-link))))
+   `(markdown-code-face ((,class (:inherit font-lock-number-face))))
+
+;;;;;; paren
+   `(show-paren-match            ((,class (:underline (:color ,c4-dim :line-width -1)))))
+   `(show-paren-mismatch         ((,class (:underline (:color ,c6-dark :line-width -1)))))
+   `(show-paren-match-expression ((,class (:background ,c6-light))))
+
+;;;;;; shr
+   `(shr-link ((,class (:inherit org-link))))
+   `(shr-selected-link ((,class (:inherit org-link :background ,c4-light))))
+
+;;;;;; git-gutter
+   `(git-gutter:added       ((,class (:background ,c6-dim))))
+   `(git-gutter:deleted     ((,class (:background ,c0-dim))))
+   `(git-gutter:modified    ((,class (:background ,c3-dim))))
+   `(git-gutter:unchanged   ((,class (:background ,c1-dim))))
+   `(git-gutter:separator   ((,class (:background ,e1))))
+   `(git-gutter-fr:added    ((,class (:inherit git-gutter:added))))
+   `(git-gutter-fr:deleted  ((,class (:inherit git-gutter:deleted))))
+   `(git-gutter-fr:modified ((,class (:inherit git-gutter:modified))))
+
+;;;;;; diff-hl
+   `(diff-hl-insert ((,class (:background ,c6-dim :foreground ,c6-dim))))
+   `(diff-hl-delete ((,class (:background ,c0-dim :foreground ,c0-dim))))
+   `(diff-hl-change ((,class (:background ,c3-dim :foreground ,c3-dim))))
+   `(diff-hl-dired-insert ((,class (:background ,c6-dim :foreground ,c6-dim))))
+   `(diff-hl-dired-change ((,class (:background ,c0-dim :foreground ,c0-dim))))
+   `(diff-hl-dired-delete ((,class (:background ,c3-dim :foreground ,c3-dim))))
+
+;;;;;; which-key
+   `(which-key-key-face ((,class (:foreground ,c6 :background ,c6-light :weight bold))))
+   `(which-key-group-description-face ((,class (:foreground ,c3-light :background ,c3-dim))))
+   `(which-key-command-description-face ((,class (:foreground ,c5 :background ,c3-light))))
+   `(which-key-separator-face ((,class (:foreground ,c1 :background ,bg))))
 
    ))
 
