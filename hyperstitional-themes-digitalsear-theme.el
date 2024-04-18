@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: April 17, 2024
-;; Version: 0.7.0
+;; Modified: April 18, 2024
+;; Version: 1.0.0
 ;; Package-Requires: ((emacs "26.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -22,20 +22,15 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-;;; Commentary:
-
-;; Searing you digitally forever
-
 ;;; Code:
 (require 'hyperstitional-themes)
 
 ;;;; definition
 (deftheme hyperstitional-themes-digitalsear
-  "Searingly Digital, searing you digitally forever.")
+  "Searingly Digital.")
 
 (let ((class '((class color)))
 ;;;;; palette
-      ;; (bg "#D2BAB2")
       (bg "#CCCCBB")
       (fg "#000000")
       (c0 "#0000FF")
@@ -66,9 +61,7 @@
       (c4-dark "#601930")
       (c5-dark "#771F18")
       (c6-dark "#8C2400")
-      (e1 "#FFFF00")
-      ;; (e1 "#40FF00")
-      )
+      (e1 "#FFFF00"))
 ;;;;; definitions
 ;;;;;; base
   (custom-theme-set-faces
@@ -141,7 +134,7 @@
    `(font-lock-doc-face                  ((,class (:foreground ,c2-dim))))
    `(font-lock-doc-markup-face           ((,class (:foreground ,c2-dark))))
    `(font-lock-warning-face              ((,class (:foreground ,c6-dark))))
-   `(font-lock-preprocessor-face         ((,class (:background ,c1-dark))))
+   `(font-lock-preprocessor-face         ((,class (:foreground ,c3-dim :background ,c1-light))))
    `(font-lock-negation-char-face        ((,class (:foreground ,c5-dark))))
    `(font-lock-number-face               ((,class (:inherit highlight-numbers-number))))
    `(font-lock-regexp-grouping-construct ((,class (:foreground ,c1-dim))))
@@ -323,6 +316,94 @@
    `(markdown-header-face-6 ((,class :foreground ,c1)))
    `(markdown-link-face ((,class (:inherit org-link))))
    `(markdown-code-face ((,class (:inherit font-lock-number-face))))
+
+;;;;;; org
+   `(org-archived                  ((,class (:foreground ,c3-dim))))
+   `(org-clock-overlay             ((,class (:foreground ,c3-dim))))
+   `(org-code                      ((,class (:foreground ,c4-dim))))
+   `(org-column                    ((,class (:foreground ,c4-dim))))
+   `(org-column-title              ((,class (:foreground ,c4-dim))))
+   `(org-date                      ((,class (:foreground ,c4 :background ,c2-light))))
+   `(org-date-selected             ((,class (:foreground ,c4-dim :background ,c4-light))))
+   `(org-default                   ((,class (:foreground ,fg))))
+   `(org-dispatcher-highlight      ((,class (:foreground ,c5-dark))))
+   `(org-document-info             ((,class (:foreground ,c4 :background ,c6-light))))
+   `(org-document-info-keyword     ((,class (:foreground ,c5 :background ,c5-light))))
+   `(org-document-title            ((,class (:foreground ,c6 :background ,c4-light))))
+   `(org-done                      ((,class (:underline (:color ,c0-dim :line-width -1)))))
+   `(org-drawer                    ((,class (:inherit fixed-pitch :foreground ,c6-dim :background ,c0-dark :box (:line-width 2 :style pressed-button)))))
+   `(org-ellipsis                  ((,class (:inherit font-lock-builtin-face))))
+   `(org-footnote                  ((,class (:foreground ,c2 :background ,c2-light))))
+   `(org-formula                   ((,class (:foreground ,c4 :background ,c3-light))))
+   `(org-headline-todo             ((,class (:background ,c2-light :weight bold))))
+   `(org-headline-done             ((,class (:background ,c4-light :weight bold))))
+   `(org-hide                      ((,class (:foreground ,c0-light))))
+   `(org-indent                    ((,class (:foreground ,c0-light))))
+   `(org-latex-and-related         ((,class (:foreground ,c3 :background ,c0-light))))
+   `(org-link                      ((,class (:foreground ,c0 :background ,c2-light :underline t))))
+   `(org-list-dt                   ((,class (:foreground ,c6 :background ,c6-light :weight bold))))
+   `(org-macro                     ((,class (:foreground ,c2 :background ,c3-light))))
+   `(org-meta-line                 ((,class (:foreground ,fg :background ,c1-light))))
+   `(org-mode-line-clock           ((,class (:foreground ,c0-dim))))
+   `(org-mode-line-clock-overrun   ((,class (:foreground ,c0-dim :background ,c4-dim))))
+   `(org-priority                  ((,class (:foreground ,c5-dim :background ,c0-light))))
+   `(org-property-value            ((,class (:foreground ,c4))))
+   `(org-scheduled                 ((,class (:foreground ,c0-dim :background ,c0-light))))
+   `(org-scheduled-previously      ((,class (:foreground ,c3-dim :background ,c0-light))))
+   `(org-scheduled-today           ((,class (:foreground ,c6-dim :background ,c0-light))))
+   `(org-sexp-date                 ((,class (:foreground ,c4-dim :background ,c0-light))))
+   `(org-special-keyword           ((,class (:foreground ,c6 :background ,c0-light))))
+   `(org-table                     ((,class (:foreground ,c6-dim :background ,c2-light))))
+   `(org-table-header              ((,class (:foreground ,c6-dim :background ,c6-light :inherit bold))))
+   `(org-tag                       ((,class (:foreground ,c1 :background ,c2-light))))
+   `(org-tag-group                 ((,class (:foreground ,c1 :background ,c4-light))))
+   `(org-target                    ((,class (:foreground ,c1 :background ,c6-light))))
+   `(org-time-grid                 ((,class (:foreground ,c4-dim))))
+   `(org-todo                      ((,class (:inherit (bold fixed-pitch) :underline (:color ,c3-dim :line-width -1)))))
+   `(org-upcoming-deadline         ((,class (:foreground ,c0-dim :background ,c2-light))))
+   `(org-upcoming-distant-deadline ((,class (:foreground ,c1-dim :background ,c2-light))))
+   `(org-verbatim                  ((,class (:foreground ,c2))))
+   `(org-verse                     ((,class (:foreground ,c5-dim))))
+   `(org-warning                   ((,class (:foreground ,c6-dark :underline (:color ,c6-dark :line-width -1)))))
+
+;;;;;;; agenda
+   `(org-agenda-calendar-event   ((,class (:foreground ,c0))))
+   `(org-agenda-calendar-sexp    ((,class (:foreground ,c0-dim))))
+   `(org-agenda-clocking         ((,class (:foreground ,c1))))
+   `(org-agenda-column-dateline  ((,class (:foreground ,c4-dim :background ,c0-light))))
+   `(org-agenda-current-time     ((,class (:foreground ,c4-dim :background ,c4-light))))
+   `(org-agenda-date             ((,class (:foreground ,c4-dim :background ,c2-light))))
+   `(org-agenda-date-today       ((,class (:foreground ,c4 :background ,c6-light))))
+   `(org-agenda-date-weekend     ((,class (:foreground ,c4 :background ,c6-light))))
+   `(org-agenda-diary            ((,class (:foreground ,c5))))
+   `(org-agenda-dimmed-todo-face ((,class (:background ,c4-dim))))
+   `(org-agenda-done             ((,class (:foreground ,c6 :background ,c6-light))))
+   `(org-agenda-filter-category  ((,class (:foreground ,c0-dim :background ,c0-light))))
+   `(org-agenda-filter-effort    ((,class (:foreground ,c1-dim :background ,c0-light))))
+   `(org-agenda-filter-regexp    ((,class (:foreground ,c2-dim :background ,c0-light))))
+   `(org-agenda-filter-tags      ((,class (:foreground ,c3-dim :background ,c0-light))))
+   `(org-agenda-restriction-lock ((,class (:foreground ,c4-dim))))
+   `(org-agenda-structure        ((,class (:inherit variable-pitch :foreground ,c5-dim :height 1.2))))
+   `(org-time-grid               ((,class (:foreground ,c6-dim))))
+
+;;;;;;; block
+   `(org-block-begin-line ((,class (:foreground ,c2 :background ,c3-light :weight normal :extend t :inherit variable-pitch))))
+   `(org-block-end-line   ((,class (:foreground ,c4 :background ,c3-light :weight normal :extend t :inherit variable-pitch))))
+
+;;;;;;; checkbox
+   `(org-checkbox                 ((,class (:foreground ,c3-dim))))
+   `(org-checkbox-statistics-done ((,class (:foreground ,c0-dim))))
+   `(org-checkbox-statistics-todo ((,class (:foreground ,c6-dark))))
+
+;;;;;;; level
+   `(org-level-1 ((,class (:foreground ,c6 :background ,c6-light))))
+   `(org-level-2 ((,class (:foreground ,c5 :background ,c5-light))))
+   `(org-level-3 ((,class (:foreground ,c4 :background ,c4-light))))
+   `(org-level-4 ((,class (:foreground ,c3 :background ,c3-light))))
+   `(org-level-5 ((,class (:foreground ,c2 :background ,c2-light))))
+   `(org-level-6 ((,class (:foreground ,c1 :background ,c1-light))))
+   `(org-level-7 ((,class (:foreground ,c0 :background ,c0-light))))
+   `(org-level-8 ((,class (:foreground ,c0-dark :background ,c0-light))))
 
 ;;;;;; paren
    `(show-paren-match            ((,class (:underline (:color ,c4-dim :line-width -1)))))
