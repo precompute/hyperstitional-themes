@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: April 16, 2024
-;; Version: 0.0.1
+;; Modified: April 18, 2024
+;; Version: 1.0.0
 ;; Package-Requires: ((emacs "26.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -24,7 +24,7 @@
 
 ;;; Commentary:
 
-;; These themes are mostly experimental, but they will be legible.
+;; These themes are mostly experimental, and might be legible.
 
 ;; Monospace fonts are boring -- they make my eyes sore.
 
@@ -33,6 +33,10 @@
 (defgroup hyperstitional-themes-digitalsear ()
   "Group for hyperstitional-theme-digitalsear."
   :group 'hyperstitional-themes-digitalsear-faces)
+
+(defgroup hyperstitional-themes-digitalsear-inverted ()
+  "Group for hyperstitional-theme-digitalsear."
+  :group 'hyperstitional-themes-digitalsear-inverted-faces)
 
 ;;;###autoload
 (add-to-list
