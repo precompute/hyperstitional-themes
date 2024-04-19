@@ -84,7 +84,7 @@
 
    `(default ((,class (:foreground ,fg :background ,bg))))
 
-   `(hl-line  ((,class (:foreground ,c2-light))))
+   `(hl-line  ((,class (:background ,c2-light))))
    `(button  ((,class (:background ,c6 :foreground ,c6-dark :box (:line-width 2 :color ,c6-light :style released-button)))))
 
    `(error                ((,class (:foreground ,c6-dark))))
