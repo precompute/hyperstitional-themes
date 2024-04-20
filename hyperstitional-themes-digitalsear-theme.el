@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: April 18, 2024
-;; Version: 1.0.0
+;; Modified: April 20, 2024
+;; Version: 1.1.0
 ;; Package-Requires: ((emacs "26.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -89,7 +89,7 @@
 
    `(error                ((,class (:foreground ,c6-dark))))
    `(highlight            ((,class (:background ,c1-light))))
-   `(match                ((,class (:foreground ,c2-light))))
+   `(match                ((,class (:foreground ,c6 :background ,c6-light :inherit bold))))
    `(menu                 ((,class (:foreground ,fg :background ,bg))))
    `(minibuffer-prompt    ((,class (:foreground ,c3-dark :slant italic))))
    `(read-multiple-choice ((,class (:foreground ,fg :slant italic))))
@@ -356,8 +356,8 @@
    `(org-scheduled-today           ((,class (:foreground ,c6-dim :background ,c0-light))))
    `(org-sexp-date                 ((,class (:foreground ,c4-dim :background ,c0-light))))
    `(org-special-keyword           ((,class (:foreground ,c6 :background ,c0-light))))
-   `(org-table                     ((,class (:foreground ,c6-dim :background ,c2-light))))
-   `(org-table-header              ((,class (:foreground ,c6-dim :background ,c6-light :inherit bold))))
+   `(org-table                     ((,class (:foreground ,c6 :background ,c2-light))))
+   `(org-table-header              ((,class (:foreground ,c6 :background ,c6-light :inherit bold))))
    `(org-tag                       ((,class (:foreground ,c1 :background ,c2-light))))
    `(org-tag-group                 ((,class (:foreground ,c1 :background ,c4-light))))
    `(org-target                    ((,class (:foreground ,c1 :background ,c6-light))))
@@ -498,10 +498,14 @@
    `(magit-branch-local           ((,class (:foreground ,c2 :background ,c2-light :inherit variable-pitch))))
    `(magit-branch-remote          ((,class (:foreground ,c4 :background ,c4-light :inherit variable-pitch))))
    `(magit-diff-file-heading      ((,class (:foreground ,c6 :background ,c6-light :height 1.15 :inherit (bold variable-pitch)))))
-   `(magit-diff-removed-highlight ((,class (:foreground ,c6-dark :background ,c2-light))))
-   `(magit-diff-added-highlight   ((,class (:foreground ,c0-dark :background ,c4-light))))
-   `(magit-diff-removed           ((,class (:background ,c0-light))))
-   `(magit-diff-added             ((,class (:background ,c6-light))))
+   `(magit-diff-removed           ((,class (:background ,c6-light))))
+   `(magit-diff-added             ((,class (:background ,c0-light))))
+   `(magit-diff-removed-highlight ((,class (:foreground ,c6-dark :inherit magit-diff-removed))))
+   `(magit-diff-added-highlight   ((,class (:foreground ,c0-dark :inherit magit-diff-added))))
+   `(magit-diff-context           ((,class (:foreground ,fg :background ,bg))))
+   `(magit-diff-context-highlight ((,class (:foreground ,c0 :background ,bg))))
+   `(magit-diff-hunk-heading      ((,class (:foreground ,c0 :background ,c6-light))))
+   `(magit-diff-hunk-heading-highlight ((,class (:foreground ,c0 :background ,c6))))
    `(magit-log-author             ((,class (:foreground ,c1-dark))))
    `(magit-log-date               ((,class (:foreground ,c2-dim))))
    `(magit-log-graph              ((,class (:foreground ,c5-dark))))
@@ -512,9 +516,9 @@
    `(magit-blame-highlight        ((,class (:foreground ,c4 :background ,c0-light))))
 
 ;;;;;; diff
-   `(diff-refine-removed ((,class (:inherit magit-diff-removed-highlight))))
-   `(diff-refine-changed ((,class (:foreground ,c3-dark :background ,c3-light))))
-   `(diff-refine-added   ((,class (:inherit magit-diff-added-highlight))))
+   `(diff-refine-removed ((,class (:foreground ,c6-dark :background ,c3-light :inherit bold-italic))))
+   `(diff-refine-changed ((,class (:foreground ,c3-dark :background ,c3-light :inherit bold-italic))))
+   `(diff-refine-added   ((,class (:foreground ,c0-dark :background ,c3-light :inherit bold-italic))))
 
 ;;;;;; orderless
    `(orderless-match-face-0 ((,class (:foreground ,c6 :background ,c6-light :inherit bold))))
@@ -668,9 +672,9 @@
    `(corfu-border    ((,class (:background ,c6-dim))))
    `(corfu-current   ((,class (:inherit region))))
    `(corfu-default   ((,class (:background ,bg :foreground ,fg))))
-   `(corfu-popupinfo ((,class (:inherit corfu-default))))
-   `(corfu-candidate-overlay-face ((,class (:inherit bold :background ,c4-light :foreground ,bg))))
-   `(corfu-candidate-overlay-face-exact-match ((,class (:inherit (bold underline) :background ,c4-dim :foreground ,bg))))
+   `(corfu-popupinfo ((,class (:background ,c0-light :foreground ,fg))))
+   `(corfu-candidate-overlay-face ((,class (:inherit bold :foreground ,c6-dim))))
+   `(corfu-candidate-overlay-face-exact-match ((,class (:inherit (bold underline) :foreground ,c6-dim))))
 
 ;;;;;; evil-goggles
    `(evil-goggles-join-face           ((,class (:background ,c0-dim))))
@@ -689,7 +693,11 @@
    `(vundo-default     ((,class (:foreground ,c6))))
    `(vundo-highlight   ((,class (:background ,c6-light))))
    `(vundo-last-saved  ((,class (:foreground ,c6-dark))))
-   `(vundo-branch-stem ((,class (:foreground ,c5-dim))))))
+   `(vundo-branch-stem ((,class (:foreground ,c5-dim))))
+
+;;;;;; eldoc-box
+   `(eldoc-box-border ((,class (:background ,c6))))
+   `(eldoc-box-body   ((,class (:background ,c5-dim))))))
 
 (provide-theme 'hyperstitional-themes-digitalsear)
 

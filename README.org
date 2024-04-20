@@ -60,55 +60,35 @@ AKA What you’re really here for.
 
 ** Supported Modes
 
-- Base faces
-- Popup
-- Font-lock
-- Header line and mode line
-- Info mode
-- Eldoc
-- Evil
-- Diredfl
-- Dired-subtree
-- Ivy
-- Swiper
-- Rainbow-delimiter
-- line Numbers
-- Isearch, occur
-- Xref
-- Imenu-list
-- outline
-- Markdown
-- Org
-  - Org-agenda
-  - Org-block
-  - Org-checkbox
-  - Org-level
-- Paren
-- Shr
-- Git-gutter
-- Diff-hl
-- Which-key
-- Company
-- Message
-- Elfeed
-- Transient
-- Magit
-- Diff
-- Orderless
-- Ediff
-- Vertico
-- Olivetti
-- Flycheck
-- Flymake
-- Tree-sitter
-- Tabs
-- Highlight-indent-guides
-- Highlight-indentation
-- Writegood
-- Eglot
-- Lsp-mode
-- Rjsx
-- Web-mode
-- Corfu
-- Evil-goggles
-- Vundo
+| Base faces        | Popup        | Font-lock               |
+| Header line       | Mode line    | Info mode               |
+| Eldoc             | Evil         | Diredfl                 |
+| Dired-subtree     | Ivy          | Swiper                  |
+| Rainbow-delimiter | line Numbers | Isearch, occur          |
+| Xref              | Imenu-list   | outline                 |
+| Markdown          | Org          | Org-agenda              |
+| Org-block         | Org-checkbox | Org-level               |
+| Paren             | Shr          | Git-gutter              |
+| Diff-hl           | Which-key    | Company                 |
+| Message           | Elfeed       | Transient               |
+| Magit             | Diff         | Orderless               |
+| Ediff             | Vertico      | Olivetti                |
+| Flycheck          | Flymake      | Highlight-indent-guides |
+| Tree-sitter       | Tabs         | Highlight-indentation   |
+| Writegood         | Eglot        | Lsp-mode                |
+| Rjsx              | Web-mode     | Corfu                   |
+| Evil-goggles      | Vundo        | Eldoc-box               |
+
+** Resources
+If you’re trying to make your own theme, these resources might be helpful.  They were very helpful for me.
+
+[[https://www.emacswiki.org/emacs/hexrgb.el][hexrgb.el by Drew Adams - useful color manipulation functions]]
+
+[[https://colorkit.io/][Colorkit - Generate Stepped Gradients, Shades and Tints]]
+
+[[https://www.canva.com/colors/color-wheel/][Canva Color Wheel - Generate Complementary / Monochromatic / Analogous colors]]
+
+[[https://hueplot.ardov.me/][Hueplot - Color Spaces in 3D]]
+
+[[https://huetone.ardov.me/][Huetone - APCA / WCAG explorer for popular color palettes]]
+
