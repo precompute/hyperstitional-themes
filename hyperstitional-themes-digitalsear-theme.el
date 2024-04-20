@@ -477,8 +477,10 @@
 
 ;;;;;; transient
    `(transient-unreachable       ((,class (:foreground ,c6-light))))
-   `(transient-inactive-value    ((,class (:foreground ,c0-light))))
-   `(transient-inactive-argument ((,class (:foreground ,c6-light))))
+   `(transient-inactive-value    ((,class (:foreground ,c2))))
+   `(transient-inactive-argument ((,class (:foreground ,c4))))
+   `(transient-value             ((,class (:background ,c2-light :inherit transient-inactive-value))))
+   `(transient-argument          ((,class (:background ,c4-light :inherit transient-inactive-argument))))
    `(transient-inapt-suffix      ((,class (:foreground ,c6-light :inherit italic))))
    `(transient-heading           ((,class (:foreground ,c6 :background ,c6-light :inherit variable-pitch :height 1.2 :extend t))))
    `(transient-active-infix      ((,class (:inherit lazy-highlight :underline t))))
