@@ -541,8 +541,8 @@
 ;;;;;; vertico
    `(vertico-current     ((,class (:underline (:line-width -1 :color ,c5) :inherit bold))))
    `(vertico-group-title ((,class (:foreground ,c6 :background ,c6-light :inherit variable-pitch))))
-   `(vertico-quick1      ((,class (:background ,c0))))
-   `(vertico-quick2      ((,class (:background ,c1))))
+   `(vertico-quick1      ((,class (:background ,c0-light :foreground ,c0))))
+   `(vertico-quick2      ((,class (:background ,c6-light :foreground ,c6))))
 
 ;;;;;; olivetti
    `(olivetti-fringe ((,class (:background ,bg))))
