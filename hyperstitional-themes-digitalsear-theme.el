@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: April 20, 2024
-;; Version: 1.1.0
+;; Modified: April 24, 2024
+;; Version: 1.1.1
 ;; Package-Requires: ((emacs "26.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -699,7 +699,33 @@
 
 ;;;;;; eldoc-box
    `(eldoc-box-border ((,class (:background ,c6))))
-   `(eldoc-box-body   ((,class (:background ,c5-dim))))))
+   `(eldoc-box-body   ((,class (:background ,c5-dim))))
+
+;;;;;; tuareg (OCaml)
+   `(tuareg-opam-error-face                      ((,class (:inherit error :background ,c0-light))))
+   `(tuareg-font-lock-error-face                 ((,class (:inherit error))))
+   `(tuareg-font-lock-operator-face              ((,class (:inherit font-lock-operator-face))))
+   `(tuareg-font-lock-governing-face             ((,class (:inherit font-lock-builtin-face))))
+   `(tuareg-font-lock-multistage-face            ((,class (:inherit font-lock-misc-punctuation-face))))
+   `(tuareg-font-double-semicolon-face           ((,class (:inherit font-lock-number-face))))
+   `(tuareg-font-lock-constructor-face           ((,class (:inherit font-lock-punctuation-face))))
+   `(tuareg-font-lock-line-number-face           ((,class (:inherit line-number))))
+   `(tuareg-font-lock-doc-verbatim-face          ((,class (:inherit font-lock-property-use-face))))
+   `(tuareg-font-lock-interactive-output-face    ((,class (:background ,c4-light :inherit font-lock-doc-face))))
+   `(tuareg-font-lock-extension-node-face        ((,class (:inherit tuareg-font-lock-infix-extension-node-face))))
+   `(tuareg-font-lock-interactive-directive-face ((,class (:background ,c4-light :inherit font-lock-doc-face))))
+
+;;;;;; caml
+   `(caml-types-def-face   ((,class (:background ,c3-light :inherit font-lock-function-name-face))))
+   `(caml-types-occ-face   ((,class (:background ,c3-light :inherit font-lock-builtin-face))))
+   `(caml-types-expr-face  ((,class (:background ,c3-light :inherit font-lock-keyword-face))))
+   `(caml-types-scope-face ((,class (:background ,c3-light :inherit font-lock-property-use-face))))
+   `(caml-types-typed-face ((,class (:background ,c3-light :inherit font-lock-type-face))))
+
+;;;;;; merlin
+   `(merlin-type-face ((,class (:inherit font-lock-type-face))))
+   `(merlin-compilation-error-face ((,class (:inherit error))))
+   `(merlin-compilation-warning-face ((,class (:inherit font-lock-warning-face))))))
 
 (provide-theme 'hyperstitional-themes-digitalsear)
 

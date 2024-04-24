@@ -47,16 +47,16 @@ Distinguishability was important, because I was going to invert the theme.
 ** Screenshots
 AKA What you’re really here for.
 *** Digitalsear
-[[images/digitalsear-ss-0.jpg]]
-[[images/digitalsear-ss-1.jpg]]
-[[images/digitalsear-ss-2.jpg]]
-[[images/digitalsear-ss-3.jpg]]
+[[file:images/digitalsear-ss-0.jpg]]
+[[file:images/digitalsear-ss-1.jpg]]
+[[file:images/digitalsear-ss-2.jpg]]
+[[file:images/digitalsear-ss-3.jpg]]
 
 *** Digitalsear Inverted
-[[images/digitalsear-inverted-ss-0.jpg]]
-[[images/digitalsear-inverted-ss-1.jpg]]
-[[images/digitalsear-inverted-ss-2.jpg]]
-[[images/digitalsear-inverted-ss-3.jpg]]
+[[file:images/digitalsear-inverted-ss-0.jpg]]
+[[file:images/digitalsear-inverted-ss-1.jpg]]
+[[file:images/digitalsear-inverted-ss-2.jpg]]
+[[file:images/digitalsear-inverted-ss-3.jpg]]
 
 ** Supported Modes
 
