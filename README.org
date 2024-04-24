@@ -78,6 +78,7 @@ AKA What you’re really here for.
 | Writegood         | Eglot        | Lsp-mode                |
 | Rjsx              | Web-mode     | Corfu                   |
 | Evil-goggles      | Vundo        | Eldoc-box               |
+| Tuareg            | Merlin       |                         |
 
 ** Resources
 If you’re trying to make your own theme, these resources might be helpful.  They were very helpful for me.
