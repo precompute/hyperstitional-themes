@@ -5,9 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: April 24, 2024
-;; Version: 1.1.1
-;; Package-Requires: ((emacs "26.1"))
+;; Modified: May 28, 2024
+;; Version: 1.2
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -168,8 +167,8 @@
    `(info-xref-visited ((,class (:foreground ,c5 :background ,bg :underline t))))
    `(helpful-heading ((,class (:inherit variable-pitch :foreground ,c6 :background ,c6-light :height 1.1 :underline t))))
 
-;;;;;; Eldoc
-   `(eldoc-highlight-function-argument ((,class (:inherit (bold region)))))
+;; ;;;;;; Eldoc
+;;    `(eldoc-highlight-function-argument ((,class (:inherit (bold region)))))
 
 ;;;;;; evil
    `(evil-ex-info                   ((,class (:foreground ,c5-dim :slant italic))))
@@ -412,6 +411,9 @@
    `(show-paren-match            ((,class (:underline (:color ,c4-dim :line-width -1)))))
    `(show-paren-mismatch         ((,class (:underline (:color ,c6-dark :line-width -1)))))
    `(show-paren-match-expression ((,class (:background ,c6-light))))
+
+;;;;;; sh
+   `(sh-heredoc ((,class (:foreground ,c1 :background ,c3-light))))
 
 ;;;;;; shr
    `(shr-link ((,class (:inherit org-link))))

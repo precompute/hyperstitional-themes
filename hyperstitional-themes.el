@@ -1,13 +1,13 @@
-;;; hyperstitional-themes.el --- Themes with weird colors -*- lexical-binding: t; -*-
+;;; hyperstitional-themes.el --- Weird themes with incremental palettes -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 precompute
 
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: April 24, 2024
-;; Version: 1.1.1
-;; Package-Requires: ((emacs "26.1"))
+;; Modified: May 28, 2024
+;; Version: 1.2
+;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
