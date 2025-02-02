@@ -39,7 +39,8 @@ Distinguishability was important, because I was going to invert the theme.
 *Digitalsear Inverted* uses an inverted palette.  I’ve only duplicated the primary theme, inverted all the colors and changed the name.
 
 #+HTML: <img src="images/digitalsear-palette-inverted.png" align="center">
-
+*** Screenshy
+*** Hashtag Fiat
 *** Planned themes
 - Something forest-green
 - Something sun-yellow

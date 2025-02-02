@@ -35,8 +35,16 @@
   :group 'hyperstitional-themes-digitalsear-faces)
 
 (defgroup hyperstitional-themes-digitalsear-inverted ()
-  "Group for hyperstitional-theme-digitalsear."
+  "Group for hyperstitional-theme-digitalsear-inverted."
   :group 'hyperstitional-themes-digitalsear-inverted-faces)
+
+(defgroup hyperstitional-themes-screenshy ()
+  "Group for hyperstitional-theme-screenshy."
+  :group 'hyperstitional-themes-screenshy-faces)
+
+(defgroup hyperstitional-themes-screenshy-bright ()
+  "Group for hyperstitional-theme-screenshy-bright."
+  :group 'hyperstitional-themes-screenshy-bright-faces)
 
 ;;;###autoload
 (add-to-list
