@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: May 28, 2024
-;; Version: 1.2.1
+;; Modified: February 19, 2024
+;; Version: 1.2.2
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -333,7 +333,7 @@
    `(org-document-info-keyword     ((,class (:foreground ,c5 :background ,c5-light))))
    `(org-document-title            ((,class (:foreground ,c6 :background ,c4-light))))
    `(org-done                      ((,class (:underline (:color ,c0-dim :line-width -1)))))
-   `(org-drawer                    ((,class (:inherit fixed-pitch :foreground ,c6-dim :background ,c0-dark :box (:line-width 2 :style pressed-button)))))
+   `(org-drawer                    ((,class (:inherit fixed-pitch :foreground ,c6-dim :background ,c0-light :box (:line-width 2 :style released-button)))))
    `(org-ellipsis                  ((,class (:inherit font-lock-builtin-face))))
    `(org-footnote                  ((,class (:foreground ,c2 :background ,c2-light))))
    `(org-formula                   ((,class (:foreground ,c4 :background ,c3-light))))

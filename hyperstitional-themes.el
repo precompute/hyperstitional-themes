@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: May 28, 2024
-;; Version: 1.2.1
+;; Modified: February 19, 2024
+;; Version: 1.2.2
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
