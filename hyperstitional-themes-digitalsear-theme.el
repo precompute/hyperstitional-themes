@@ -6,7 +6,7 @@
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
 ;; Modified: May 28, 2024
-;; Version: 1.2
+;; Version: 1.2.1
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -339,8 +339,8 @@
    `(org-formula                   ((,class (:foreground ,c4 :background ,c3-light))))
    `(org-headline-todo             ((,class (:background ,c2-light :weight bold))))
    `(org-headline-done             ((,class (:background ,c4-light :weight bold))))
-   `(org-hide                      ((,class (:foreground ,c0-light))))
-   `(org-indent                    ((,class (:foreground ,c0-light))))
+   `(org-hide                      ((,class (:foreground ,bg))))
+   `(org-indent                    ((,class (:foreground ,bg))))
    `(org-latex-and-related         ((,class (:foreground ,c3 :background ,c0-light))))
    `(org-link                      ((,class (:foreground ,c0 :background ,c2-light :underline t))))
    `(org-list-dt                   ((,class (:foreground ,c6 :background ,c6-light :weight bold))))
