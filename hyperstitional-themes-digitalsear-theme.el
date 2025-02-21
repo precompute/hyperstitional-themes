@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: February 19, 2024
-;; Version: 1.2.2
+;; Modified: February 21, 2024
+;; Version: 1.2.3
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -104,6 +104,8 @@
    `(highlight-numbers-number ((,class (:foreground ,c1-dim))))
    `(highlight-quoted-symbol  ((,class (:foreground ,c4-dim))))
    `(highlight-quoted-quote   ((,class (:foreground ,c3-dim))))
+
+   `(apropos-symbol ((,class (:height 1.2 :foreground ,c1-dim))))
 
    `(custom-button         ((,class (:foreground ,c5 :background ,c5-dark :box (:line-width 2 :color ,c5-light :style released-button)))))
    `(custom-button-pressed ((,class (:foreground ,c5 :background ,c5-dark :box (:line-width 2 :color ,c5-light :style pressed-button)))))
