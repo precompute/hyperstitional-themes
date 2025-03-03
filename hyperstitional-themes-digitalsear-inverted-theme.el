@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 18, 2024
-;; Modified: February 21, 2024
-;; Version: 1.2.3
+;; Modified: March 03, 2025
+;; Version: 1.2.4
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -145,13 +145,14 @@
    `(font-lock-regexp-grouping-backslash ((,class (:foreground ,c0-dim))))
 
 ;;;;;; Header line and mode line
-   `(mode-line                  ((,class (:inherit variable-pitch :foreground ,c0 :background ,c6))))
-   `(mode-line-buffer-id        ((,class (:inherit variable-pitch :foreground ,c1 :background ,c6))))
-   `(mode-line-emphasis         ((,class (:inherit variable-pitch :foreground ,c2 :background ,c6))))
-   `(mode-line-highlight        ((,class (:inherit variable-pitch :foreground ,c3 :background ,c6))))
-   `(mode-line-inactive         ((,class (:inherit variable-pitch :foreground ,c4 :background ,c6-dim))))
-   `(header-line                ((,class (:inherit mode-line))))
-   `(header-line-highlight      ((,class (:inherit mode-line-highlight))))
+   `(mode-line             ((,class (:inherit variable-pitch :foreground ,c0 :background ,c6))))
+   `(mode-line-buffer-id   ((,class (:inherit variable-pitch :foreground ,c1 :background ,c6))))
+   `(mode-line-emphasis    ((,class (:inherit variable-pitch :foreground ,c2 :background ,c6))))
+   `(mode-line-highlight   ((,class (:inherit variable-pitch :foreground ,c3 :background ,c6-light))))
+   `(mode-line-inactive    ((,class (:inherit variable-pitch :foreground ,c4 :background ,c6-dim))))
+   `(header-line           ((,class (:inherit mode-line))))
+   `(header-line-inactive  ((,class (:inherit mode-line-inactive))))
+   `(header-line-highlight ((,class (:inherit mode-line-highlight))))
 
 ;;;;;; Info mode
    `(info-quoted       ((,class (:foreground ,c1 :background ,bg))))
@@ -729,7 +730,15 @@
 ;;;;;; merlin
    `(merlin-type-face ((,class (:inherit font-lock-type-face))))
    `(merlin-compilation-error-face ((,class (:inherit error))))
-   `(merlin-compilation-warning-face ((,class (:inherit font-lock-warning-face))))))
+   `(merlin-compilation-warning-face ((,class (:inherit font-lock-warning-face))))
+
+;;;;;; breadcrumb
+   `(breadcrumb-face                ((,class (:background ,bg :foreground ,fg :inherit variable-pitch :height 0.9))))
+   `(breadcrumb-imenu-leaf-face     ((,class (:background ,c0-light :foreground ,c6-dim :inherit variable-pitch))))
+   `(breadcrumb-imenu-crumbs-face   ((,class (:background ,c3-light :foreground ,c4-dim :inherit variable-pitch))))
+   `(breadcrumb-project-base-face   ((,class (:background ,c5-light :foreground ,c1-dim :inherit variable-pitch))))
+   `(breadcrumb-project-leaf-face   ((,class (:background ,c0-light :foreground ,c6-dim :inherit variable-pitch))))
+   `(breadcrumb-project-crumbs-face ((,class (:background ,c3-light :foreground ,c4-dim :inherit variable-pitch))))))
 
 (provide-theme 'hyperstitional-themes-digitalsear-inverted)
 
