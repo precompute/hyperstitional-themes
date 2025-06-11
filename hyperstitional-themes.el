@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: June 11, 2025
-;; Version: 2.0.0
+;; Modified: June 12, 2025
+;; Version: 2.1.0
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -739,6 +739,122 @@
      `(breadcrumb-project-base-face   ((,class (:background ,c5-light :foreground ,c1-dim :inherit variable-pitch))))
      `(breadcrumb-project-leaf-face   ((,class (:background ,c0-light :foreground ,c6-dim :inherit variable-pitch))))
      `(breadcrumb-project-crumbs-face ((,class (:background ,c3-light :foreground ,c4-dim :inherit variable-pitch)))))))
+
+;;;; Rebug
+(defun hyperstitional-themes-rebug-generate (theme-name palette)
+  "Generate a Rebug theme named THEME-NAME with PALETTE."
+  (let ((class '((class color)))
+        (ra (cdr (assoc 'ra palette)))
+        (rb (cdr (assoc 'rb palette)))
+        (rc (cdr (assoc 'rc palette)))
+        (rd (cdr (assoc 'rd palette)))
+        (re (cdr (assoc 're palette)))
+        (rf (cdr (assoc 'rf palette)))
+        (rg (cdr (assoc 'rg palette)))
+        (ga (cdr (assoc 'ga palette)))
+        (gb (cdr (assoc 'gb palette)))
+        (gc (cdr (assoc 'gc palette)))
+        (gd (cdr (assoc 'gd palette)))
+        (ge (cdr (assoc 'ge palette)))
+        (gf (cdr (assoc 'gf palette)))
+        (gg (cdr (assoc 'gg palette)))
+        (ba (cdr (assoc 'ba palette)))
+        (bb (cdr (assoc 'bb palette)))
+        (bc (cdr (assoc 'bc palette)))
+        (bd (cdr (assoc 'bd palette)))
+        (be (cdr (assoc 'be palette)))
+        (bf (cdr (assoc 'bf palette)))
+        (bg (cdr (assoc 'bg palette)))
+        (wa (cdr (assoc 'wa palette)))
+        (wb (cdr (assoc 'wb palette)))
+        (wc (cdr (assoc 'wc palette)))
+        (wd (cdr (assoc 'wd palette)))
+        (we (cdr (assoc 'we palette)))
+        (wf (cdr (assoc 'wf palette)))
+        (wg (cdr (assoc 'wg palette)))
+        (ww (cdr (assoc 'ww palette))))
+;;;;; definitions
+    (custom-theme-set-faces
+     theme-name
+     `(fringe                     ((,class (:background ,ww))))
+     `(vertical-border            ((,class (:background ,ww :foreground ,ww))))
+     `(window-divider             ((,class (:background ,ww :foreground ,ww))))
+     `(window-divider-first-pixel ((,class (:background ,ww :foreground ,ww))))
+     `(window-divider-last-pixel  ((,class (:background ,ww :foreground ,ww))))
+
+     `(default ((,class (:foreground ,wa :background ,ww))))
+     `(button  ((,class (:background ,be :foreground ,wc :box (:line-width 2 :color ,bb :style released-button)))))
+     `(hl-line ((,class (:background ,bf))))
+
+     `(error                ((,class (:foreground ,ra :background ,rg))))
+     `(highlight            ((,class (:background ,bd))))
+     `(match                ((,class (:foreground ,gc :background ,wg))))
+     `(menu                 ((,class (:foreground ,rf))))
+     `(minibuffer-prompt    ((,class (:foreground ,gf :slant italic))))
+     `(read-multiple-choice ((,class (:foreground ,gf :slant italic))))
+     `(region               ((,class (:background ,wf))))
+     `(secondary-selection  ((,class (:background ,bg))))
+     `(shadow               ((,class (:foreground ,we))))
+     `(success              ((,class (:foreground ,ga))))
+     `(warning              ((,class (:foreground ,ba))))
+     `(cursor               ((,class (:background ,wc))))
+     `(whitespace-tab       ((,class (:background ,gg))))
+     `(escape-glyph         ((,class (:foreground ,re))))
+
+     `(custom-button         ((,class (:foreground ,wb :background ,bc :box (:line-width 2 :color ,bg :style released-button)))))
+     `(custom-button-pressed ((,class (:foreground ,wb :background ,bc :box (:line-width 2 :color ,bg :style pressed-button)))))
+
+;;;;;; popup
+     `(popup-face      ((,class (:inherit button :foreground ,rc))))
+     `(popup-menu-face ((,class (:inherit popup-face))))
+     `(popup-tip-face  ((,class (:inherit (popup-face variable-pitch)))))
+
+;;;;;; font-lock
+     `(font-lock-builtin-face              ((,class (:foreground ,ga :weight bold))))
+     `(font-lock-comment-face              ((,class (:foreground ,ww :background ,we))))
+     `(font-lock-comment-delimiter-face    ((,class (:foreground ,wf :background ,we))))
+     `(font-lock-constant-face             ((,class (:foreground ,ba :weight bold))))
+     `(font-lock-function-name-face        ((,class (:foreground ,ra :slant italic))))
+     `(font-lock-keyword-face              ((,class (:foreground ,rb :weight bold))))
+     `(font-lock-string-face               ((,class (:foreground ,bb :underline t))))
+     `(font-lock-type-face                 ((,class (:foreground ,gc :underline t))))
+     `(font-lock-variable-name-face        ((,class (:foreground ,gd))))
+     `(font-lock-variable-use-face         ((,class (:foreground ,gd :slant italic :weight bold))))
+     `(font-lock-property-name-face        ((,class (:foreground ,rd))))
+     `(font-lock-property-use-face         ((,class (:foreground ,rd :background ,wg :slant italic :weight bold))))
+     `(font-lock-punctuation-face          ((,class (:foreground ,be))))
+     `(font-lock-misc-punctuation-face     ((,class (:foreground ,be :slant italic :weight bold))))
+     `(font-lock-escape-face               ((,class (:foreground ,rd))))
+     `(font-lock-regexp-face               ((,class (:foreground ,wc :background ,bc :weight bold))))
+     `(font-lock-bracket-face              ((,class (:foreground ,wf))))
+     `(font-lock-operator-face             ((,class (:foreground ,ge))))
+     `(font-lock-delimiter-face            ((,class (:foreground ,re))))
+     `(font-lock-doc-face                  ((,class (:foreground ,ra :background ,gg :slant italic))))
+     `(font-lock-doc-markup-face           ((,class (:foreground ,ra :background ,gf :slant italic))))
+     `(font-lock-warning-face              ((,class (:foreground ,ra :background ,rg :weight bold))))
+     `(font-lock-preprocessor-face         ((,class (:foreground ,ra :background ,bg :weight bold))))
+     `(font-lock-negation-char-face        ((,class (:foreground ,bd :background ,rd))))
+     `(font-lock-number-face               ((,class (:foreground ,rc))))
+     `(font-lock-regexp-grouping-construct ((,class (:inherit font-lock-regexp-face :underline t))))
+     `(font-lock-regexp-grouping-backslash ((,class (:inherit font-lock-regexp-face :underline t))))
+
+
+;;;;;; rainbow-delimiter
+     `(rainbow-delimiters-base-face       ((,class (:foreground ,ba :weight bold))))
+     `(rainbow-delimiters-depth-1-face    ((,class (:foreground ,ga :weight bold))))
+     `(rainbow-delimiters-depth-2-face    ((,class (:foreground ,ra :weight bold))))
+     `(rainbow-delimiters-depth-3-face    ((,class (:foreground ,bb :weight bold))))
+     `(rainbow-delimiters-depth-4-face    ((,class (:foreground ,gb :weight bold))))
+     `(rainbow-delimiters-depth-5-face    ((,class (:foreground ,rb :weight bold))))
+     `(rainbow-delimiters-depth-6-face    ((,class (:foreground ,bc :weight bold))))
+     `(rainbow-delimiters-depth-7-face    ((,class (:foreground ,gc :weight bold))))
+     `(rainbow-delimiters-depth-8-face    ((,class (:foreground ,rc :weight bold))))
+     `(rainbow-delimiters-depth-9-face    ((,class (:foreground ,bd :weight bold))))
+     `(rainbow-delimiters-unmatched-face  ((,class (:foreground ,ga :background ,rg))))
+     `(rainbow-delimiters-mismatched-face ((,class (:foreground ,ba :background ,rg))))
+     `(rainbow-delimiters-base-error-face ((,class (:foreground ,ra :background ,rg))))
+
+     )))
 
 ;;;; Load
 ;;;###autoload
