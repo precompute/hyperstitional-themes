@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: June 12, 2025
-;; Version: 2.1.0
+;; Modified: June 17, 2025
+;; Version: 2.2.0
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -436,6 +436,7 @@
      `(diff-hl-insert ((,class (:background ,c6-dim :foreground ,c6-dim))))
      `(diff-hl-delete ((,class (:background ,c0-dim :foreground ,c0-dim))))
      `(diff-hl-change ((,class (:background ,c3-dim :foreground ,c3-dim))))
+     `(diff-hl-reverted-hunk-highlight ((,class (:background ,c6-dim))))
      `(diff-hl-dired-insert ((,class (:background ,c6-dim :foreground ,c6-dim))))
      `(diff-hl-dired-change ((,class (:background ,c0-dim :foreground ,c0-dim))))
      `(diff-hl-dired-delete ((,class (:background ,c3-dim :foreground ,c3-dim))))
@@ -788,16 +789,16 @@
 
      `(error                ((,class (:foreground ,ra :background ,rg))))
      `(highlight            ((,class (:background ,bd))))
-     `(match                ((,class (:foreground ,gc :background ,wg))))
+     `(match                ((,class (:foreground ,ga :background ,gg :slant italic))))
      `(menu                 ((,class (:foreground ,rf))))
      `(minibuffer-prompt    ((,class (:foreground ,gf :slant italic))))
      `(read-multiple-choice ((,class (:foreground ,gf :slant italic))))
-     `(region               ((,class (:background ,wf))))
+     `(region               ((,class (:background ,rg))))
      `(secondary-selection  ((,class (:background ,bg))))
      `(shadow               ((,class (:foreground ,we))))
      `(success              ((,class (:foreground ,ga))))
      `(warning              ((,class (:foreground ,ba))))
-     `(cursor               ((,class (:background ,wc))))
+     `(cursor               ((,class (:background ,ga :underline (:color ,rc)))))
      `(whitespace-tab       ((,class (:background ,gg))))
      `(escape-glyph         ((,class (:foreground ,re))))
 
@@ -811,17 +812,17 @@
 
 ;;;;;; font-lock
      `(font-lock-builtin-face              ((,class (:foreground ,ga :weight bold))))
-     `(font-lock-comment-face              ((,class (:foreground ,ww :background ,we))))
-     `(font-lock-comment-delimiter-face    ((,class (:foreground ,wf :background ,we))))
+     `(font-lock-comment-face              ((,class (:foreground ,bb :background ,bg))))
+     `(font-lock-comment-delimiter-face    ((,class (:foreground ,bb :background ,bg :weight bold))))
      `(font-lock-constant-face             ((,class (:foreground ,ba :weight bold))))
      `(font-lock-function-name-face        ((,class (:foreground ,ra :slant italic))))
      `(font-lock-keyword-face              ((,class (:foreground ,rb :weight bold))))
      `(font-lock-string-face               ((,class (:foreground ,bb :underline t))))
-     `(font-lock-type-face                 ((,class (:foreground ,gc :underline t))))
-     `(font-lock-variable-name-face        ((,class (:foreground ,gd))))
-     `(font-lock-variable-use-face         ((,class (:foreground ,gd :slant italic :weight bold))))
+     `(font-lock-type-face                 ((,class (:foreground ,gb :underline t))))
+     `(font-lock-variable-name-face        ((,class (:foreground ,gc))))
+     `(font-lock-variable-use-face         ((,class (:foreground ,gc :slant italic :weight bold))))
      `(font-lock-property-name-face        ((,class (:foreground ,rd))))
-     `(font-lock-property-use-face         ((,class (:foreground ,rd :background ,wg :slant italic :weight bold))))
+     `(font-lock-property-use-face         ((,class (:foreground ,rd :slant italic :weight bold))))
      `(font-lock-punctuation-face          ((,class (:foreground ,be))))
      `(font-lock-misc-punctuation-face     ((,class (:foreground ,be :slant italic :weight bold))))
      `(font-lock-escape-face               ((,class (:foreground ,rd))))
@@ -829,8 +830,8 @@
      `(font-lock-bracket-face              ((,class (:foreground ,wf))))
      `(font-lock-operator-face             ((,class (:foreground ,ge))))
      `(font-lock-delimiter-face            ((,class (:foreground ,re))))
-     `(font-lock-doc-face                  ((,class (:foreground ,ra :background ,gg :slant italic))))
-     `(font-lock-doc-markup-face           ((,class (:foreground ,ra :background ,gf :slant italic))))
+     `(font-lock-doc-face                  ((,class (:foreground ,ra :background ,gf :slant italic))))
+     `(font-lock-doc-markup-face           ((,class (:foreground ,ra :background ,ge :slant italic))))
      `(font-lock-warning-face              ((,class (:foreground ,ra :background ,rg :weight bold))))
      `(font-lock-preprocessor-face         ((,class (:foreground ,ra :background ,bg :weight bold))))
      `(font-lock-negation-char-face        ((,class (:foreground ,bd :background ,rd))))
@@ -838,23 +839,347 @@
      `(font-lock-regexp-grouping-construct ((,class (:inherit font-lock-regexp-face :underline t))))
      `(font-lock-regexp-grouping-backslash ((,class (:inherit font-lock-regexp-face :underline t))))
 
+;;;;;; Header line and mode line
+     `(mode-line             ((,class (:inherit variable-pitch :foreground ,wb :background ,be))))
+     `(mode-line-buffer-id   ((,class (:inherit variable-pitch :foreground ,ba))))
+     `(mode-line-emphasis    ((,class (:inherit variable-pitch :foreground ,ra))))
+     `(mode-line-highlight   ((,class (:inherit variable-pitch :foreground ,ga))))
+     `(mode-line-inactive    ((,class (:inherit variable-pitch :foreground ,wb :background ,bg))))
+     `(header-line           ((,class (:inherit mode-line))))
+     `(header-line-inactive  ((,class (:inherit mode-line-inactive))))
+     `(header-line-highlight ((,class (:inherit mode-line-highlight))))
+
+;;;;;; tabs
+     `(tab-line                   ((,class (:inherit mode-line))))
+     `(tab-bar                    ((,class (:inherit mode-line))))
+     `(tab-bar-tab                ((,class (:inherit mode-line))))
+     `(tab-bar-tab-inactive       ((,class (:inherit mode-line-inactive))))
+
+;;;;;; Info mode
+     `(info-quoted       ((,class (:foreground ,ga :background ,gf :inherit fixed-pitch))))
+     `(info-header-node  ((,class (:foreground ,re :inherit bold :underline t))))
+     `(info-header-xref  ((,class (:foreground ,bc :background ,bg :underline t))))
+     `(info-node         ((,class (:foreground ,re))))
+     `(info-index-match  ((,class (:foreground ,ga :background ,gg))))
+     `(info-menu-header  ((,class (:foreground ,rb :background ,rf :weight bold :underline t))))
+     `(info-menu-star    ((,class (:foreground ,ba))))
+     `(info-title-1      ((,class (:foreground ,ga :background ,bg :inherit bold :underline t))))
+     `(info-title-2      ((,class (:foreground ,ba :background ,bg :inherit bold :underline t))))
+     `(info-title-3      ((,class (:foreground ,ra :background ,bg :inherit bold :underline t))))
+     `(info-title-4      ((,class (:foreground ,ga :background ,bg :inherit bold :underline t))))
+     `(info-xref         ((,class (:foreground ,bc :background ,bg :underline t))))
+     `(info-xref-visited ((,class (:foreground ,rc :background ,rg :underline t))))
+     `(helpful-heading ((,class (:inherit variable-pitch :foreground ,ga :background ,wg :height 1.1 :underline t))))
+
+;;;;;; evil
+     `(evil-ex-info                   ((,class (:foreground ,ra :slant italic))))
+     `(evil-ex-search                 ((,class (:foreground ,gc :background ,rg :inherit bold))))
+     `(evil-ex-substitute-matches     ((,class (:foreground ,ra :strike-through t :inherit bold))))
+     `(evil-ex-substitute-replacement ((,class (:foreground ,ga :inherit bold))))
+
+;;;;;; diredfl
+     `(diredfl-dir-name               ((,class (:foreground ,ra :background ,rg :inherit (bold variable-pitch)))))
+     `(diredfl-number                 ((,class (:foreground ,ga :background ,gf))))
+     `(diredfl-symlink                ((,class (:foreground ,bf :background ,ba))))
+     `(diredfl-no-priv                ((,class (:foreground ,wf))))
+     `(diredfl-dir-priv               ((,class (:foreground ,ra :background ,rg :underline t))))
+     `(diredfl-read-priv              ((,class (:foreground ,ba :background ,bg :underline t))))
+     `(diredfl-rare-priv              ((,class (:foreground ,ga :background ,gg :underline t))))
+     `(diredfl-link-priv              ((,class (:foreground ,ra :background ,rg :underline t))))
+     `(diredfl-file-name              ((,class (:foreground ,ba :inherit variable-pitch))))
+     `(diredfl-exec-priv              ((,class (:foreground ,ga :background ,gg :underline t))))
+     `(diredfl-date-time              ((,class (:foreground ,wb :underline t))))
+     `(diredfl-write-priv             ((,class (:foreground ,ga :background ,gg :underline t))))
+     `(diredfl-other-priv             ((,class (:foreground ,ba :background ,bg :underline t))))
+     `(diredfl-file-suffix            ((,class (:foreground ,ga :inherit variable-pitch))))
+     `(diredfl-dir-heading            ((,class (:foreground ,ra :background ,rg :inherit (bold variable-pitch) :underline t :height 1.1))))
+     `(diredfl-autofile-name          ((,class (:inherit diredfl-file-name :underline t))))
+     `(diredfl-flag-mark              ((,class (:inherit region :foreground ,ra))))
+     `(diredfl-flag-mark-line         ((,class (:slant italic :underline ,ra))))
+     `(diredfl-executable-tag         ((,class (:inherit diredfl-file-name))))
+     `(diredfl-ignored-file-name      ((,class (:foreground ,wc))))
+     `(diredfl-deletion               ((,class (:foreground ,ga :background ,rg))))
+     `(diredfl-deletion-file-name     ((,class (:foreground ,ga :slant italic :strike-through ,ra))))
+     `(diredfl-tagged-autofile-name   ((,class (:inherit diredfl-file-name :underline t))))
+     `(diredfl-compressed-file-name   ((,class (:inherit diredfl-file-name))))
+     `(diredfl-compressed-file-suffix ((,class (:inherit diredfl-file-name))))
+
+;;;;;; dired-subtree
+     `(dired-subtree-depth-1-face ((,class (:background ,bg))))
+     `(dired-subtree-depth-2-face ((,class (:background ,gg))))
+     `(dired-subtree-depth-3-face ((,class (:background ,bf))))
+     `(dired-subtree-depth-4-face ((,class (:background ,gf))))
+     `(dired-subtree-depth-5-face ((,class (:background ,be))))
+     `(dired-subtree-depth-6-face ((,class (:background ,ge))))
 
 ;;;;;; rainbow-delimiter
      `(rainbow-delimiters-base-face       ((,class (:foreground ,ba :weight bold))))
-     `(rainbow-delimiters-depth-1-face    ((,class (:foreground ,ga :weight bold))))
-     `(rainbow-delimiters-depth-2-face    ((,class (:foreground ,ra :weight bold))))
-     `(rainbow-delimiters-depth-3-face    ((,class (:foreground ,bb :weight bold))))
-     `(rainbow-delimiters-depth-4-face    ((,class (:foreground ,gb :weight bold))))
-     `(rainbow-delimiters-depth-5-face    ((,class (:foreground ,rb :weight bold))))
-     `(rainbow-delimiters-depth-6-face    ((,class (:foreground ,bc :weight bold))))
-     `(rainbow-delimiters-depth-7-face    ((,class (:foreground ,gc :weight bold))))
-     `(rainbow-delimiters-depth-8-face    ((,class (:foreground ,rc :weight bold))))
-     `(rainbow-delimiters-depth-9-face    ((,class (:foreground ,bd :weight bold))))
-     `(rainbow-delimiters-unmatched-face  ((,class (:foreground ,ga :background ,rg))))
-     `(rainbow-delimiters-mismatched-face ((,class (:foreground ,ba :background ,rg))))
-     `(rainbow-delimiters-base-error-face ((,class (:foreground ,ra :background ,rg))))
+     `(rainbow-delimiters-depth-1-face    ((,class (:foreground ,gc :weight bold))))
+     `(rainbow-delimiters-depth-2-face    ((,class (:foreground ,rc :weight bold))))
+     `(rainbow-delimiters-depth-3-face    ((,class (:foreground ,bc :weight bold))))
+     `(rainbow-delimiters-depth-4-face    ((,class (:foreground ,ge :weight bold))))
+     `(rainbow-delimiters-depth-5-face    ((,class (:foreground ,re :weight bold))))
+     `(rainbow-delimiters-depth-6-face    ((,class (:foreground ,be :weight bold))))
+     `(rainbow-delimiters-depth-7-face    ((,class (:foreground ,gf :weight bold))))
+     `(rainbow-delimiters-depth-8-face    ((,class (:foreground ,rf :weight bold))))
+     `(rainbow-delimiters-depth-9-face    ((,class (:foreground ,bf :weight bold))))
+     `(rainbow-delimiters-unmatched-face  ((,class (:foreground ,ga :underline ,rg))))
+     `(rainbow-delimiters-mismatched-face ((,class (:foreground ,ba :underline ,rg))))
+     `(rainbow-delimiters-base-error-face ((,class (:foreground ,ra :underline ,rg))))
 
-     )))
+;;;;;; Line Numbers
+     `(line-number              ((,class (:foreground ,ga :background ,bg))))
+     `(line-number-current-line ((,class (:foreground ,ga :background ,gf :inherit bold))))
+
+;;;;;; isearch, occur
+     `(isearch        ((,class (:foreground ,ba :background ,bg :slant italic))))
+     `(isearch-fail   ((,class (:background ,rg :slant italic))))
+     `(lazy-highlight ((,class (:background ,ge :slant italic))))
+     `(query-replace  ((,class (:foreground ,rb :background ,gg))))
+
+;;;;;; xref
+     `(xref-file-header  ((,class (:foreground ,ba :weight bold :height 1.15 :inherit variable-pitch))))
+     `(xref-match        ((,class (:foreground ,ba :background ,bg :underline t))))
+     `(xref-line-number  ((,class (:foreground ,ga :weight bold))))
+
+;;;;;; imenu-list
+     `(imenu-list-entry-face            ((,class (:inherit variable-pitch :foreground ,ba :background ,bg))))
+     `(imenu-list-entry-face-3          ((,class (:inherit variable-pitch :foreground ,ba))))
+     `(imenu-list-entry-face-2          ((,class (:inherit variable-pitch :foreground ,ra))))
+     `(imenu-list-entry-face-1          ((,class (:inherit variable-pitch :foreground ,ga))))
+     `(imenu-list-entry-face-0          ((,class (:inherit variable-pitch :foreground ,wa))))
+     `(imenu-list-entry-subalist-face-3 ((,class (:inherit variable-pitch :foreground ,bc :underline t))))
+     `(imenu-list-entry-subalist-face-2 ((,class (:inherit variable-pitch :foreground ,rc :underline t))))
+     `(imenu-list-entry-subalist-face-1 ((,class (:inherit variable-pitch :foreground ,gc :underline t))))
+     `(imenu-list-entry-subalist-face-0 ((,class (:inherit variable-pitch :foreground ,ba :background ,bg :underline t))))
+
+;;;;;; Outline
+     `(outline-1 ((,class (:foreground ,ba :background ,bg :inherit variable-pitch :underline t))))
+     `(outline-2 ((,class (:foreground ,ga :background ,gg :inherit variable-pitch :underline t))))
+     `(outline-3 ((,class (:foreground ,ra :background ,rg :inherit variable-pitch :underline t))))
+     `(outline-4 ((,class (:foreground ,bc :background ,bg :inherit variable-pitch :underline t))))
+     `(outline-5 ((,class (:foreground ,gc :background ,gg :inherit variable-pitch :underline t))))
+     `(outline-6 ((,class (:foreground ,rc :background ,rg :inherit variable-pitch :underline t))))
+     `(outline-7 ((,class (:foreground ,be :background ,bg :inherit variable-pitch :underline t))))
+     `(outline-8 ((,class (:foreground ,ge :background ,gg :inherit variable-pitch :underline t))))
+     `(outline-minor-1 ((,class (:foreground ,ba :background ,bg :inherit variable-pitch))))
+     `(outline-minor-2 ((,class (:foreground ,ga :background ,gg :inherit variable-pitch))))
+     `(outline-minor-3 ((,class (:foreground ,ra :background ,rg :inherit variable-pitch))))
+     `(outline-minor-4 ((,class (:foreground ,bc :background ,bg :inherit variable-pitch))))
+     `(outline-minor-5 ((,class (:foreground ,gc :background ,gg :inherit variable-pitch))))
+     `(outline-minor-6 ((,class (:foreground ,rc :background ,rg :inherit variable-pitch))))
+     `(outline-minor-7 ((,class (:foreground ,be :background ,bg :inherit variable-pitch))))
+     `(outline-minor-8 ((,class (:foreground ,ge :background ,gg :inherit variable-pitch))))
+
+;;;;;; markdown
+     `(markdown-header-face-1 ((,class :inherit outline-1)))
+     `(markdown-header-face-2 ((,class :inherit outline-2)))
+     `(markdown-header-face-3 ((,class :inherit outline-3)))
+     `(markdown-header-face-4 ((,class :inherit outline-4)))
+     `(markdown-header-face-5 ((,class :inherit outline-5)))
+     `(markdown-header-face-6 ((,class :inherit outline-6)))
+     `(markdown-link-face ((,class (:inherit org-link))))
+     `(markdown-code-face ((,class (:inherit font-lock-number-face))))
+
+;;;;;; paren
+     `(show-paren-match            ((,class (:underline (:color ,gc :line-width -1)))))
+     `(show-paren-mismatch         ((,class (:underline (:color ,rc :line-width -1)))))
+     `(show-paren-match-expression ((,class (:background ,gg))))
+
+;;;;;; sh
+     `(sh-heredoc ((,class (:foreground ,rb :background ,bg))))
+
+;;;;;; shr
+     `(shr-link ((,class (:inherit org-link))))
+     `(shr-selected-link ((,class (:inherit org-link :background ,bf))))
+
+;;;;;; git-gutter
+     `(git-gutter:added       ((,class (:background ,gc :foreground ,gc))))
+     `(git-gutter:deleted     ((,class (:background ,rc :foreground ,rc))))
+     `(git-gutter:modified    ((,class (:background ,bc :foreground ,bc))))
+     ;; `(git-gutter:unchanged   ((,class (:background ,gc :foreground ,gc))))
+     `(git-gutter:separator   ((,class (:background ,wc))))
+     `(git-gutter-fr:added    ((,class (:inherit git-gutter:added))))
+     `(git-gutter-fr:deleted  ((,class (:inherit git-gutter:deleted))))
+     `(git-gutter-fr:modified ((,class (:inherit git-gutter:modified))))
+
+;;;;;; diff-hl
+     `(diff-hl-insert ((,class (:background ,gc :foreground ,gc))))
+     `(diff-hl-delete ((,class (:background ,rc :foreground ,rc))))
+     `(diff-hl-change ((,class (:background ,bc :foreground ,bc))))
+     `(diff-hl-dired-insert ((,class (:background ,ge :foreground ,ge))))
+     `(diff-hl-dired-change ((,class (:background ,re :foreground ,re))))
+     `(diff-hl-dired-delete ((,class (:background ,be :foreground ,be))))
+
+;;;;;; which-key
+     `(which-key-key-face ((,class (:foreground ,ga :background ,bg :weight bold))))
+     `(which-key-group-description-face ((,class (:foreground ,ra :weight bold))))
+     `(which-key-command-description-face ((,class (:foreground ,ba :slant italic))))
+     `(which-key-separator-face ((,class (:foreground ,ww :background ,ww))))
+
+;;;;;; message
+     `(message-header-name    ((,class (:foreground ,bb :inherit variable-pitch))))
+     `(message-header-cc      ((,class (:foreground ,rc :inherit (bold variable-pitch)))))
+     `(message-header-to      ((,class (:foreground ,ra :inherit (bold variable-pitch)))))
+     `(message-header-subject ((,class (:foreground ,ga :inherit variable-pitch))))
+
+;;;;;; transient
+     `(transient-unreachable       ((,class (:foreground ,we))))
+     `(transient-inactive-value    ((,class (:foreground ,we))))
+     `(transient-inactive-argument ((,class (:foreground ,we))))
+     `(transient-value             ((,class (:background ,ga :inherit transient-inactive-value))))
+     `(transient-argument          ((,class (:background ,ba :inherit transient-inactive-argument))))
+     `(transient-inapt-suffix      ((,class (:foreground ,we :inherit italic))))
+     `(transient-heading           ((,class (:foreground ,ra :background ,rg :inherit variable-pitch :height 1.1 :extend t))))
+     `(transient-active-infix      ((,class (:inherit lazy-highlight :underline t))))
+     `(transient-key               ((,class (:foreground ,ra :inherit bold))))
+     `(transient-key-exit          ((,class (:foreground ,ba :inherit bold))))
+     `(transient-key-noop          ((,class (:foreground ,wc :inherit bold))))
+     `(transient-key-stay          ((,class (:foreground ,ga :inherit bold))))
+     `(transient-key-return        ((,class (:foreground ,ga :background ,gg :inherit bold))))
+     `(transient-mismatched-key    ((,class (:foreground ,rb :inherit bold))))
+     `(transient-nonstandard-key   ((,class (:foreground ,bc :inherit bold))))
+     `(transient-unreachable-key   ((,class (:foreground ,we))))
+
+;;;;;; magit
+     `(magit-section-heading        ((,class (:foreground ,ra :background ,gg :inherit variable-pitch))))
+     `(magit-section-highlight      ((,class (:background ,bg))))
+     `(magit-hash                   ((,class (:foreground ,rc :background ,bg :weight bold))))
+     `(magit-branch-local           ((,class (:foreground ,rd :background ,bg :inherit variable-pitch))))
+     `(magit-branch-remote          ((,class (:foreground ,gd :background ,bg :inherit variable-pitch))))
+     `(magit-diff-file-heading      ((,class (:foreground ,ba :height 1.1 :weight bold))))
+     `(magit-diff-removed           ((,class (:foreground ,rc :background ,rg))))
+     `(magit-diff-added             ((,class (:foreground ,gc :background ,gg))))
+     `(magit-diff-removed-highlight ((,class (:foreground ,ra :background ,re))))
+     `(magit-diff-added-highlight   ((,class (:foreground ,ga :background ,ge))))
+     `(magit-diff-context           ((,class (:foreground ,wa :background ,ww))))
+     `(magit-diff-context-highlight ((,class (:inherit magit-diff-context :background ,wg))))
+     `(magit-diff-hunk-heading      ((,class (:inherit magit-diff-context :background ,wf))))
+     `(magit-diff-hunk-heading-highlight ((,class (:inherit magit-diff-context :background ,we :weight bold))))
+     `(magit-log-author             ((,class (:foreground ,ww :background ,ga))))
+     `(magit-log-date               ((,class (:foreground ,ww :background ,ra))))
+     `(magit-log-graph              ((,class (:foreground ,ww :background ,ba))))
+     `(magit-tag                    ((,class (:foreground ,bb :underline t :inherit variable-pitch))))
+     `(magit-popup-disabled-argument((,class (:foreground ,we))))
+     `(magit-blame-margin           ((,class (:foreground ,bd :background ,wf))))
+     `(magit-blame-heading          ((,class (:foreground ,rd :background ,wf))))
+     `(magit-blame-highlight        ((,class (:foreground ,gd :background ,wf))))
+
+;;;;;; diff
+     `(diff-refine-removed ((,class (:foreground ,ww :background ,ra))))
+     `(diff-refine-changed ((,class (:foreground ,ww :background ,ba))))
+     `(diff-refine-added   ((,class (:foreground ,ww :background ,ga))))
+
+;;;;;; orderless
+     `(orderless-match-face-0 ((,class (:background ,bg :weight bold :underline ,bd))))
+     `(orderless-match-face-1 ((,class (:background ,rg :weight bold :underline ,rd))))
+     `(orderless-match-face-2 ((,class (:background ,gg :weight bold :underline ,gd))))
+     `(orderless-match-face-3 ((,class (:background ,wg :weight bold :underline ,wd))))
+
+;;;;;; ediff
+     `(ediff-odd-diff-Ancestor ((,class (:background ,rg))))
+     `(ediff-odd-diff-C ((,class (:background ,rf))))
+     `(ediff-odd-diff-B ((,class (:background ,re))))
+     `(ediff-odd-diff-A ((,class (:background ,rd))))
+     `(ediff-even-diff-Ancestor ((,class (:background ,gg))))
+     `(ediff-even-diff-C ((,class (:background ,gf))))
+     `(ediff-even-diff-B ((,class (:background ,ge))))
+     `(ediff-even-diff-A ((,class (:background ,gd))))
+
+;;;;;; flycheck
+     `(flycheck-info    ((,class (:underline (:line-width -1 :color ,gc)))))
+     `(flycheck-error   ((,class (:underline (:line-width -1 :color ,rc)))))
+     `(flycheck-warning ((,class (:underline (:line-width -1 :color ,bc)))))
+
+     `(flycheck-posframe-face            ((,class (:inherit popup-tip-face))))
+     `(flycheck-posframe-info-face       ((,class (:inherit (popup-tip-face variable-pitch flycheck-info) :foreground ,gc))))
+     `(flycheck-posframe-error-face      ((,class (:inherit (popup-tip-face variable-pitch flycheck-error) :foreground ,rc))))
+     `(flycheck-posframe-border-face     ((,class (:inherit popup-tip-face))))
+     `(flycheck-posframe-warning-face    ((,class (:inherit (popup-tip-face variable-pitch flycheck-warning) :foreground ,bc))))
+     `(flycheck-posframe-background-face ((,class (:inherit popup-tip-face))))
+
+;;;;;; flymake
+     `(flymake-note    ((,class (:underline (:line-width -1 :color ,gc)))))
+     `(flymake-error   ((,class (:underline (:line-width -1 :color ,rc)))))
+     `(flymake-warning ((,class (:underline (:line-width -1 :color ,bc)))))
+     `(flymake-note-echo    ((,class (:inherit flymake-note))))
+     `(flymake-error-echo   ((,class (:inherit flymake-error))))
+     `(flymake-warning-echo ((,class (:inherit flymake-warning))))
+     `(flymake-note-echo-at-eol    ((,class (:inherit flymake-note))))
+     `(flymake-error-echo-at-eol   ((,class (:inherit flymake-error))))
+     `(flymake-warning-echo-at-eol ((,class (:inherit flymake-warning))))
+     `(flymake-end-of-line-diagnostics-face ((,class (:inherit region font-lock-keyword-face))))
+
+;;;;;; highlight-indent-guides
+     `(highlight-indent-guides-odd-face             ((,class (:foreground ,ra))))
+     `(highlight-indent-guides-stack-odd-face       ((,class (:foreground ,ba))))
+     `(highlight-indent-guides-top-odd-face         ((,class (:foreground ,ga))))
+     `(highlight-indent-guides-even-face            ((,class (:foreground ,rc))))
+     `(highlight-indent-guides-stack-even-face      ((,class (:foreground ,bc))))
+     `(highlight-indent-guides-top-even-face        ((,class (:foreground ,gc))))
+     `(highlight-indent-guides-character-face       ((,class (:foreground ,re))))
+     `(highlight-indent-guides-stack-character-face ((,class (:foreground ,be))))
+     `(highlight-indent-guides-top-character-face   ((,class (:foreground ,ge))))
+
+;;;;;; highlight-indentation
+     `(highlight-indentation-face                ((,class (:background ,wg))))
+     `(highlight-indentation-guides-odd-face     ((,class (:inherit highlight-indentation-face))))
+     `(highlight-indentation-guides-even-face    ((,class (:inherit highlight-indentation-face))))
+     `(highlight-indentation-current-column-face ((,class (:background ,wf))))
+
+;;;;;; writegood
+     `(writegood-weasels-face       ((,class (:underline (:line-width -1 :color ,rg)))))
+     `(writegood-duplicates-face    ((,class (:underline (:line-width -1 :color ,bg)))))
+     `(writegood-passive-voice-face ((,class (:underline (:line-width -1 :color ,gg)))))
+
+;;;;;; eglot
+     `(eglot-highlight-symbol-face  ((,class (:foreground ,rb :background ,bf :weight bold))))
+
+;;;;;; rjsx
+     `(rjsx-tag-bracket-face ((,class :inherit font-lock-keyword-face)))
+
+;;;;;; web-mode
+     `(web-mode-html-tag-bracket-face ((,class :inherit font-lock-keyword-face)))
+
+;;;;;; corfu
+     `(corfu-bar       ((,class (:background ,ra))))
+     `(corfu-border    ((,class (:background ,gc))))
+     `(corfu-current   ((,class (:inherit region))))
+     `(corfu-default   ((,class (:inherit default))))
+     `(corfu-popupinfo ((,class (:inherit default))))
+     `(corfu-candidate-overlay-face ((,class (:inherit bold :foreground ,gd))))
+     `(corfu-candidate-overlay-face-exact-match ((,class (:foreground ,gd :weight bold :underline ,gb))))
+
+;;;;;; evil-goggles
+     `(evil-goggles-join-face           ((,class (:background ,gg))))
+     `(evil-goggles-yank-face           ((,class (:background ,bg))))
+     `(evil-goggles-paste-face          ((,class (:background ,ge))))
+     `(evil-goggles-change-face         ((,class (:background ,be))))
+     `(evil-goggles-delete-face         ((,class (:background ,re))))
+     `(evil-goggles-surround-face       ((,class (:background ,gd))))
+     `(evil-goggles-commentary-face     ((,class (:background ,bb))))
+     `(evil-goggles-nerd-commenter-face ((,class (:inherit evil-goggles-commentary-face))))
+
+;;;;;; vundo
+     `(vundo-node        ((,class (:foreground ,ga))))
+     `(vundo-stem        ((,class (:foreground ,ra))))
+     `(vundo-saved       ((,class (:foreground ,wa))))
+     `(vundo-default     ((,class (:foreground ,we))))
+     `(vundo-highlight   ((,class (:background ,ba))))
+     `(vundo-last-saved  ((,class (:foreground ,wc))))
+     `(vundo-branch-stem ((,class (:foreground ,rd))))
+
+;;;;;; eldoc-box
+     `(eldoc-box-border ((,class (:background ,ga))))
+     `(eldoc-box-body   ((,class (:background ,bg))))
+
+;;;;;; breadcrumb
+     `(breadcrumb-face                ((,class (:inherit variable-pitch :foreground ,wb :weight bold))))
+     `(breadcrumb-imenu-leaf-face     ((,class (:inherit variable-pitch :foreground ,ga :background ,gg :overline ,ga))))
+     `(breadcrumb-imenu-crumbs-face   ((,class (:inherit variable-pitch :foreground ,ra :background ,gg :overline ,ra))))
+     `(breadcrumb-project-base-face   ((,class (:inherit variable-pitch :foreground ,ba :background ,gg :overline ,ba))))
+     `(breadcrumb-project-leaf-face   ((,class (:inherit variable-pitch :foreground ,ga :background ,bg :overline ,ga))))
+     `(breadcrumb-project-crumbs-face ((,class (:inherit variable-pitch :foreground ,ra :background ,bg :overline ,ra)))))))
 
 ;;;; Load
 ;;;###autoload
@@ -865,4 +1190,17 @@
 
 (provide 'hyperstitional-themes)
 
+;; Ignored:
+;; - Ivy
+;; - Swiper
+;; - Org
+;; - Company
+;; - Elfeed
+;; - Vertico
+;; - Olivetti
+;; - Tree-Sitter
+;; - lsp-mode
+;; - Tuareg
+;; - Caml
+;; - Merlin
 ;;; hyperstitional-themes.el ends here

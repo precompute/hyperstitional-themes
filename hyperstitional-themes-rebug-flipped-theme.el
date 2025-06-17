@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: June 12, 2024
-;; Modified: June 12, 2025
-;; Version: 2.1.0
+;; Modified: June 17, 2025
+;; Version: 2.2.0
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -49,13 +49,13 @@
    (ge . "#32541d")
    (gf . "#213813")
    (gg . "#111c0a")
-   (ba . "#2939c2")
-   (bb . "#2432aa")
-   (bc . "#1e2a8e")
-   (bd . "#182171")
-   (be . "#121954")
-   (bf . "#0c1138")
-   (bg . "#06081c")
+   (ba . "#0c44fb")
+   (bb . "#0a3bdc")
+   (bc . "#0932b7")
+   (bd . "#072792")
+   (be . "#051e6d")
+   (bf . "#031449")
+   (bg . "#020a24")
    (wa . "#ffffff")
    (wb . "#dfdfdf")
    (wc . "#bababa")
