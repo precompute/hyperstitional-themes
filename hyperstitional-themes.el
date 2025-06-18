@@ -100,6 +100,7 @@
      `(cursor               ((,class (:background ,c6))))
      `(whitespace-tab       ((,class (:background ,c6-light))))
      `(escape-glyph         ((,class (:foreground ,c2-dark))))
+     `(fill-column-indicator ((,class (:foreground ,c0-dim))))
 
      `(highlight-numbers-number ((,class (:foreground ,c1-dim))))
      `(highlight-quoted-symbol  ((,class (:foreground ,c4-dim))))
@@ -813,6 +814,7 @@
      `(cursor               ((,class (:background ,ga :underline (:color ,rc)))))
      `(whitespace-tab       ((,class (:background ,gg))))
      `(escape-glyph         ((,class (:foreground ,re))))
+     `(fill-column-indicator ((,class (:foreground ,gg))))
 
      `(custom-button         ((,class (:foreground ,wb :background ,bc :box (:line-width 2 :color ,bg :style released-button)))))
      `(custom-button-pressed ((,class (:foreground ,wb :background ,bc :box (:line-width 2 :color ,bg :style pressed-button)))))
