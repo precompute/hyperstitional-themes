@@ -1,12 +1,12 @@
-;;; hyperstitional-themes-rebug-theme.el --- Digital Bug -*- lexical-binding: t; -*-
+;;; hyperstitional-themes-rebug-flipped-theme.el --- Digital Bug, Flipped. -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2025 precompute
 
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: June 12, 2024
-;; Modified: June 17, 2025
-;; Version: 2.2.0
+;; Modified: June 18, 2025
+;; Version: 2.3.0
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -65,6 +65,6 @@
    (wg . "#252525")
    (ww . "#000000")))
 
-(provide-theme 'hyperstitional-themes-rebug)
+(provide-theme 'hyperstitional-themes-rebug-flipped)
 
-;;; hyperstitional-themes-rebug-theme.el ends here
+;;; hyperstitional-themes-rebug-flipped-theme.el ends here
