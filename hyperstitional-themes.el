@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: June 18, 2025
-;; Version: 2.3.0
+;; Modified: June 19, 2025
+;; Version: 2.4.0
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -884,6 +884,7 @@
      `(info-xref         ((,class (:foreground ,bc :background ,bg :underline (:style dots :position 0)))))
      `(info-xref-visited ((,class (:foreground ,rc :background ,rg :underline (:style dots :position 0)))))
      `(helpful-heading ((,class (:inherit variable-pitch :foreground ,ga :background ,wg :height 1.1 :underline t))))
+     `(help-key-binding ((,class (:inherit button))))
 
 ;;;;;; evil
      `(evil-ex-info                   ((,class (:foreground ,ra :slant italic))))
@@ -1034,6 +1035,44 @@
      `(org-verse                     ((,class (:foreground ,wb :underline (:color ,wa :style dots)))))
      `(org-warning                   ((,class (:foreground ,ra :background ,rg :underline (:color ,ra :line-width -1)))))
 
+;;;;;;; agenda
+     `(org-agenda-calendar-event   ((,class (:foreground ,bb :underline (:style dots :position 0)))))
+     `(org-agenda-calendar-sexp    ((,class (:foreground ,bb :box (:line-width -1 :color ,gg)))))
+     `(org-agenda-clocking         ((,class (:foreground ,rb :box (:line-width -1 :color ,rg)))))
+     `(org-agenda-column-dateline  ((,class (:foreground ,rc :background ,wf))))
+     `(org-agenda-current-time     ((,class (:foreground ,rc :box (:line-width -1 :color ,ra)))))
+     `(org-agenda-date             ((,class (:foreground ,ra :background ,bg))))
+     `(org-agenda-date-today       ((,class (:inherit org-agenda-date :underline (:style dashes :position 0)))))
+     `(org-agenda-date-weekend     ((,class (:inherit org-agenda-date :underline (:style dots :position 0)))))
+     `(org-agenda-diary            ((,class (:foreground ,gd))))
+     `(org-agenda-dimmed-todo-face ((,class (:background ,rc))))
+     `(org-agenda-done             ((,class (:foreground ,ga :background ,gg))))
+     `(org-agenda-filter-category  ((,class (:foreground ,bc :background ,rg :underline (:style dashes :position 0)))))
+     `(org-agenda-filter-effort    ((,class (:foreground ,gc :background ,rg :underline (:style dashes :position 0)))))
+     `(org-agenda-filter-regexp    ((,class (:foreground ,rc :background ,rg :underline (:style dashes :position 0)))))
+     `(org-agenda-filter-tags      ((,class (:foreground ,wc :background ,rg :underline (:style dashes :position 0)))))
+     `(org-agenda-restriction-lock ((,class (:foreground ,wf))))
+     `(org-agenda-structure        ((,class (:inherit variable-pitch :foreground ,bc :height 1.2))))
+
+;;;;;;; block
+     `(org-block-begin-line ((,class (:foreground ,ww :background ,ra :slant italic :extend t :weight bold :inherit variable-pitch))))
+     `(org-block-end-line   ((,class (:foreground ,ww :background ,ba :slant italic :extend t :weight bold :inherit variable-pitch))))
+
+;;;;;;; checkbox
+     `(org-checkbox                 ((,class (:foreground ,ra :background ,rg))))
+     `(org-checkbox-statistics-done ((,class (:foreground ,ga :background ,gg))))
+     `(org-checkbox-statistics-todo ((,class (:foreground ,ba :background ,bg))))
+
+;;;;;;; level
+     `(org-level-1 ((,class (:inherit outline-1 :extend t))))
+     `(org-level-2 ((,class (:inherit outline-2 :extend t))))
+     `(org-level-3 ((,class (:inherit outline-3 :extend t))))
+     `(org-level-4 ((,class (:inherit outline-4 :extend t))))
+     `(org-level-5 ((,class (:inherit outline-5 :extend t))))
+     `(org-level-6 ((,class (:inherit outline-6 :extend t))))
+     `(org-level-7 ((,class (:inherit outline-7 :extend t))))
+     `(org-level-8 ((,class (:inherit outline-8 :extend t))))
+
 ;;;;;; markdown
      `(markdown-header-face-1 ((,class :inherit outline-1)))
      `(markdown-header-face-2 ((,class :inherit outline-2)))
@@ -1041,8 +1080,8 @@
      `(markdown-header-face-4 ((,class :inherit outline-4)))
      `(markdown-header-face-5 ((,class :inherit outline-5)))
      `(markdown-header-face-6 ((,class :inherit outline-6)))
-     `(markdown-link-face ((,class (:inherit org-link))))
-     `(markdown-code-face ((,class (:inherit font-lock-number-face))))
+     `(markdown-link-face ((,class :inherit org-link)))
+     `(markdown-code-face ((,class :inherit font-lock-number-face)))
 
 ;;;;;; paren
      `(show-paren-match            ((,class (:underline (:color ,gc :postion 0 :style dashes)))))
