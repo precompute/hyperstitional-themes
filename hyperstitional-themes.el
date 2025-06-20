@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: June 19, 2025
-;; Version: 2.4.0
+;; Modified: June 21, 2025
+;; Version: 2.5.0
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -969,22 +969,22 @@
      `(imenu-list-entry-subalist-face-0 ((,class (:inherit variable-pitch :foreground ,ba :background ,bg :underline t))))
 
 ;;;;;; Outline
-     `(outline-1 ((,class (:foreground ,ba :background ,bg :inherit variable-pitch :underline t))))
-     `(outline-2 ((,class (:foreground ,ga :background ,gg :inherit variable-pitch :underline t))))
-     `(outline-3 ((,class (:foreground ,ra :background ,rg :inherit variable-pitch :underline t))))
-     `(outline-4 ((,class (:foreground ,bc :background ,bg :inherit variable-pitch :underline t))))
-     `(outline-5 ((,class (:foreground ,gc :background ,gg :inherit variable-pitch :underline t))))
-     `(outline-6 ((,class (:foreground ,rc :background ,rg :inherit variable-pitch :underline t))))
-     `(outline-7 ((,class (:foreground ,be :background ,bg :inherit variable-pitch :underline t))))
-     `(outline-8 ((,class (:foreground ,ge :background ,gg :inherit variable-pitch :underline t))))
-     `(outline-minor-1 ((,class (:foreground ,ba :background ,bg :inherit variable-pitch))))
-     `(outline-minor-2 ((,class (:foreground ,ga :background ,gg :inherit variable-pitch))))
-     `(outline-minor-3 ((,class (:foreground ,ra :background ,rg :inherit variable-pitch))))
-     `(outline-minor-4 ((,class (:foreground ,bc :background ,bg :inherit variable-pitch))))
-     `(outline-minor-5 ((,class (:foreground ,gc :background ,gg :inherit variable-pitch))))
-     `(outline-minor-6 ((,class (:foreground ,rc :background ,rg :inherit variable-pitch))))
-     `(outline-minor-7 ((,class (:foreground ,be :background ,bg :inherit variable-pitch))))
-     `(outline-minor-8 ((,class (:foreground ,ge :background ,gg :inherit variable-pitch))))
+     `(outline-1 ((,class (:foreground ,ba :background ,bg :inherit variable-pitch :extend t))))
+     `(outline-2 ((,class (:foreground ,ga :background ,gg :inherit variable-pitch :extend t))))
+     `(outline-3 ((,class (:foreground ,ra :background ,rg :inherit variable-pitch :extend t))))
+     `(outline-4 ((,class (:foreground ,bc :background ,bg :inherit variable-pitch :extend t))))
+     `(outline-5 ((,class (:foreground ,gc :background ,gg :inherit variable-pitch :extend t))))
+     `(outline-6 ((,class (:foreground ,rc :background ,rg :inherit variable-pitch :extend t))))
+     `(outline-7 ((,class (:foreground ,be :background ,bg :inherit variable-pitch :extend t))))
+     `(outline-8 ((,class (:foreground ,ge :background ,gg :inherit variable-pitch :extend t))))
+     `(outline-minor-1 ((,class (:foreground ,ba :background ,bg :inherit variable-pitch :extend t))))
+     `(outline-minor-2 ((,class (:foreground ,ga :background ,gg :inherit variable-pitch :extend t))))
+     `(outline-minor-3 ((,class (:foreground ,ra :background ,rg :inherit variable-pitch :extend t))))
+     `(outline-minor-4 ((,class (:foreground ,bc :background ,bg :inherit variable-pitch :extend t))))
+     `(outline-minor-5 ((,class (:foreground ,gc :background ,gg :inherit variable-pitch :extend t))))
+     `(outline-minor-6 ((,class (:foreground ,rc :background ,rg :inherit variable-pitch :extend t))))
+     `(outline-minor-7 ((,class (:foreground ,be :background ,bg :inherit variable-pitch :extend t))))
+     `(outline-minor-8 ((,class (:foreground ,ge :background ,gg :inherit variable-pitch :extend t))))
 
 ;;;;;; org
      `(org-archived                  ((,class (:foreground ,wc))))
@@ -1055,8 +1055,8 @@
      `(org-agenda-structure        ((,class (:inherit variable-pitch :foreground ,bc :height 1.2))))
 
 ;;;;;;; block
-     `(org-block-begin-line ((,class (:foreground ,ww :background ,ra :slant italic :extend t :weight bold :inherit variable-pitch))))
-     `(org-block-end-line   ((,class (:foreground ,ww :background ,ba :slant italic :extend t :weight bold :inherit variable-pitch))))
+     `(org-block-begin-line ((,class (:foreground ,ra :background ,rg :slant italic :extend t :weight bold :inherit variable-pitch :underline (:color ,ra :position 0)))))
+     `(org-block-end-line   ((,class (:foreground ,ba :background ,bg :slant italic :extend t :weight bold :inherit variable-pitch :overline ,ba))))
 
 ;;;;;;; checkbox
      `(org-checkbox                 ((,class (:foreground ,ra :background ,rg))))
@@ -1064,14 +1064,14 @@
      `(org-checkbox-statistics-todo ((,class (:foreground ,ba :background ,bg))))
 
 ;;;;;;; level
-     `(org-level-1 ((,class (:inherit outline-1 :extend t))))
-     `(org-level-2 ((,class (:inherit outline-2 :extend t))))
-     `(org-level-3 ((,class (:inherit outline-3 :extend t))))
-     `(org-level-4 ((,class (:inherit outline-4 :extend t))))
-     `(org-level-5 ((,class (:inherit outline-5 :extend t))))
-     `(org-level-6 ((,class (:inherit outline-6 :extend t))))
-     `(org-level-7 ((,class (:inherit outline-7 :extend t))))
-     `(org-level-8 ((,class (:inherit outline-8 :extend t))))
+     `(org-level-1 ((,class (:foreground ,ba :background ,bg :inherit variable-pitch :extend t))))
+     `(org-level-2 ((,class (:foreground ,ga :background ,gg :inherit variable-pitch :extend t))))
+     `(org-level-3 ((,class (:foreground ,ra :background ,rg :inherit variable-pitch :extend t))))
+     `(org-level-4 ((,class (:foreground ,bc :background ,bg :inherit variable-pitch :extend t))))
+     `(org-level-5 ((,class (:foreground ,gc :background ,gg :inherit variable-pitch :extend t))))
+     `(org-level-6 ((,class (:foreground ,rc :background ,rg :inherit variable-pitch :extend t))))
+     `(org-level-7 ((,class (:foreground ,be :background ,bg :inherit variable-pitch :extend t))))
+     `(org-level-8 ((,class (:foreground ,ge :background ,gg :inherit variable-pitch :extend t))))
 
 ;;;;;; markdown
      `(markdown-header-face-1 ((,class :inherit outline-1)))
