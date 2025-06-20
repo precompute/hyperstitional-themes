@@ -6,7 +6,7 @@
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
 ;; Modified: June 21, 2025
-;; Version: 2.5.0
+;; Version: 2.6.0
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -1011,7 +1011,7 @@
      `(org-indent                    ((,class (:foreground ,wd))))
      `(org-latex-and-related         ((,class (:foreground ,wb))))
      `(org-link                      ((,class (:foreground ,ba :background ,rg :underline ,ba))))
-     `(org-list-dt                   ((,class (:background ,wg :weight bold))))
+     `(org-list-dt                   ((,class (:background ,bf :underline (:color ,bb :style dots :position 0)))))
      `(org-macro                     ((,class (:foreground ,ra :underline ,ba))))
      `(org-meta-line                 ((,class (:foreground ,wb))))
      `(org-mode-line-clock           ((,class (:foreground ,rc :weight bold))))
@@ -1031,7 +1031,7 @@
      `(org-time-grid                 ((,class (:foreground ,rc :box (:line-width -1 :color ,wc)))))
      `(org-upcoming-deadline         ((,class (:background ,bg :underline (:color ,bg :style dots)))))
      `(org-upcoming-distant-deadline ((,class (:background ,bg :underline (:color ,we :style dots)))))
-     `(org-verbatim                  ((,class (:foreground ,wb))))
+     `(org-verbatim                  ((,class (:foreground ,bc))))
      `(org-verse                     ((,class (:foreground ,wb :underline (:color ,wa :style dots)))))
      `(org-warning                   ((,class (:foreground ,ra :background ,rg :underline (:color ,ra :line-width -1)))))
 
