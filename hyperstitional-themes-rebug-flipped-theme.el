@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: June 12, 2024
-;; Modified: June 19, 2025
-;; Version: 2.4.0
+;; Modified: June 22, 2025
+;; Version: 2.7.0
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -33,37 +33,15 @@
   :kind 'color-scheme
   :family 'hyperstitional-themes-rebug)
 
-(hyperstitional-themes-rebug-generate
- 'hyperstitional-themes-rebug-flipped
- '((ra . "#e11e2c")
-   (rb . "#c51a26")
-   (rc . "#a41620")
-   (rd . "#83111a")
-   (re . "#620d13")
-   (rf . "#41090d")
-   (rg . "#210406")
-   (ga . "#73c242")
-   (gb . "#65aa3a")
-   (gc . "#548e30")
-   (gd . "#437126")
-   (ge . "#32541d")
-   (gf . "#213813")
-   (gg . "#111c0a")
-   (ba . "#0c44fb")
-   (bb . "#0a3bdc")
-   (bc . "#0932b7")
-   (bd . "#072792")
-   (be . "#051e6d")
-   (bf . "#031449")
-   (bg . "#020a24")
-   (wa . "#ffffff")
-   (wb . "#dfdfdf")
-   (wc . "#bababa")
-   (wd . "#949494")
-   (we . "#6f6f6f")
-   (wf . "#4a4a4a")
-   (wg . "#252525")
-   (ww . "#000000")))
+(let* ((alphalist '(1.0 0.873 0.728 0.582 0.436 0.291 0.145))
+       (background "#000000")
+       (r (hyperstitional-themes-generate-color-range "#e11e2c" alphalist background))
+       (g (hyperstitional-themes-generate-color-range "#73c242" alphalist background))
+       (b (hyperstitional-themes-generate-color-range "#0c44fb" alphalist background))
+       (w (hyperstitional-themes-generate-color-range "#ffffff" alphalist background)))
+  (hyperstitional-themes-rebug-generate
+   'hyperstitional-themes-rebug-flipped
+   r g b w background))
 
 (provide-theme 'hyperstitional-themes-rebug-flipped)
 

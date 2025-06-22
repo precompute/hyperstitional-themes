@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: June 21, 2025
-;; Version: 2.6.0
+;; Modified: June 22, 2025
+;; Version: 2.7.0
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -29,6 +29,35 @@
 ;; Monospace fonts are boring -- they make my eyes sore.
 
 ;;; Code:
+;;;; Helper Functions
+(defun hyperstitional-themes-hex-to-rgb (color)
+  "Convert hex COLOR to (r g b)."
+  (mapcar (lambda (z) (/ (float (string-to-number z 16)) 255.0))
+          (list (substring color 1 3)
+                (substring color 3 5)
+                (substring color 5 7))))
+
+(defun hyperstitional-themes-rgb-to-hex (color)
+  "Convert (r g b) COLOR to hex."
+  (concat "#" (mapconcat (lambda (z) (format "%02x" (* z 255))) color)))
+
+(defun hyperstitional-themes-zip-lists (a b)
+  "Zip lists A and B."
+  (when (not (or (null a) (null b)))
+    (cons (list (car a) (car b)) (hyperstitional-themes-zip-lists (cdr a) (cdr b)))))
+
+(defun hyperstitional-themes-calculate-color-against-another (color alpha background)
+  "Calculate what COLOR with ALPHA over BACKGROUND is in hex."
+  (hyperstitional-themes-rgb-to-hex
+   (mapcar (lambda (z) (+ (* (car z) alpha) (* (cadr z) (- 1.0 alpha))))
+           (hyperstitional-themes-zip-lists (hyperstitional-themes-hex-to-rgb color)
+                                            (hyperstitional-themes-hex-to-rgb background)))))
+
+(defun hyperstitional-themes-generate-color-range (color alphalist background)
+  "Return a list of colors derived from COLOR set to a member of ALPHALIST over BACKGROUND."
+  (mapcar (lambda (z) (hyperstitional-themes-calculate-color-against-another color z background))
+          alphalist))
+
 ;;;; Digitalsear
 (defun hyperstitional-themes-digitalsear-generate (theme-name palette)
   "Generate a Digitalsear theme named THEME-NAME with PALETTE."
@@ -743,38 +772,14 @@
      `(breadcrumb-project-crumbs-face ((,class (:background ,c3-light :foreground ,c4-dim :inherit variable-pitch)))))))
 
 ;;;; Rebug
-(defun hyperstitional-themes-rebug-generate (theme-name palette)
-  "Generate a Rebug theme named THEME-NAME with PALETTE."
+(defun hyperstitional-themes-rebug-generate (theme-name r g b w z)
+  "Generate a Rebug theme named THEME-NAME with color lists R, G, B, W and background Z."
   (let ((class '((class color)))
-        (ra (cdr (assoc 'ra palette)))
-        (rb (cdr (assoc 'rb palette)))
-        (rc (cdr (assoc 'rc palette)))
-        (rd (cdr (assoc 'rd palette)))
-        (re (cdr (assoc 're palette)))
-        (rf (cdr (assoc 'rf palette)))
-        (rg (cdr (assoc 'rg palette)))
-        (ga (cdr (assoc 'ga palette)))
-        (gb (cdr (assoc 'gb palette)))
-        (gc (cdr (assoc 'gc palette)))
-        (gd (cdr (assoc 'gd palette)))
-        (ge (cdr (assoc 'ge palette)))
-        (gf (cdr (assoc 'gf palette)))
-        (gg (cdr (assoc 'gg palette)))
-        (ba (cdr (assoc 'ba palette)))
-        (bb (cdr (assoc 'bb palette)))
-        (bc (cdr (assoc 'bc palette)))
-        (bd (cdr (assoc 'bd palette)))
-        (be (cdr (assoc 'be palette)))
-        (bf (cdr (assoc 'bf palette)))
-        (bg (cdr (assoc 'bg palette)))
-        (wa (cdr (assoc 'wa palette)))
-        (wb (cdr (assoc 'wb palette)))
-        (wc (cdr (assoc 'wc palette)))
-        (wd (cdr (assoc 'wd palette)))
-        (we (cdr (assoc 'we palette)))
-        (wf (cdr (assoc 'wf palette)))
-        (wg (cdr (assoc 'wg palette)))
-        (ww (cdr (assoc 'ww palette))))
+        (ra (nth 0 r)) (rb (nth 1 r)) (rc (nth 2 r)) (rd (nth 3 r)) (re (nth 4 r)) (rf (nth 5 r)) (rg (nth 6 r))
+        (ga (nth 0 g)) (gb (nth 1 g)) (gc (nth 2 g)) (gd (nth 3 g)) (ge (nth 4 g)) (gf (nth 5 g)) (gg (nth 6 g))
+        (ba (nth 0 b)) (bb (nth 1 b)) (bc (nth 2 b)) (bd (nth 3 b)) (be (nth 4 b)) (bf (nth 5 b)) (bg (nth 6 b))
+        (wa (nth 0 w)) (wb (nth 1 w)) (wc (nth 2 w)) (wd (nth 3 w)) (we (nth 4 w)) (wf (nth 5 w)) (wg (nth 6 w))
+        (ww z))
 ;;;;; definitions
 ;; Ignored:
 ;; - Ivy
