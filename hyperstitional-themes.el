@@ -6,7 +6,7 @@
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
 ;; Modified: June 22, 2025
-;; Version: 2.7.5
+;; Version: 2.7.6
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -30,28 +30,12 @@
 
 ;;; Code:
 ;;;; Helper Functions
-(defun hyperstitional-themes-hex-to-rgb (color)
-  "Convert hex COLOR to (r g b)."
-  (mapcar (lambda (z) (/ (float (string-to-number z 16)) 255.0))
-          (list (substring color 1 3)
-                (substring color 3 5)
-                (substring color 5 7))))
-
-(defun hyperstitional-themes-rgb-to-hex (color)
-  "Convert (r g b) COLOR to hex."
-  (concat "#" (mapconcat (lambda (z) (format "%02x" (* z 255))) color)))
-
-(defun hyperstitional-themes-zip-lists (a b)
-  "Zip lists A and B."
-  (when (not (or (null a) (null b)))
-    (cons (list (car a) (car b)) (hyperstitional-themes-zip-lists (cdr a) (cdr b)))))
-
 (defun hyperstitional-themes-calculate-color-against-another (color alpha background)
-  "Calculate what COLOR with ALPHA over BACKGROUND is in hex."
-  (hyperstitional-themes-rgb-to-hex
-   (mapcar (lambda (z) (+ (* (car z) alpha) (* (cadr z) (- 1.0 alpha))))
-           (hyperstitional-themes-zip-lists (hyperstitional-themes-hex-to-rgb color)
-                                            (hyperstitional-themes-hex-to-rgb background)))))
+  "Calculate what COLOR with ALPHA over BACKGROUND is in hex.
+Returns a color in hex as a string."
+  (apply #'color-rgb-to-hex
+         (append (color-blend (color-name-to-rgb color) (color-name-to-rgb background) alpha)
+                 (list 2))))
 
 (defun hyperstitional-themes-generate-color-range (color alphalist background)
   "Return a list of colors derived from COLOR set to a member of ALPHALIST over BACKGROUND."
