@@ -6,7 +6,7 @@
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: June 12, 2024
 ;; Modified: June 22, 2025
-;; Version: 2.7.0
+;; Version: 2.7.5
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -35,9 +35,9 @@
 
 (let* ((alphalist '(1.0 0.873 0.728 0.582 0.436 0.291 0.145))
        (background "#ffffff")
-       (r (hyperstitional-themes-generate-color-range "#e11e2c" alphalist background))
-       (g (hyperstitional-themes-generate-color-range "#73c242" alphalist background))
-       (b (hyperstitional-themes-generate-color-range "#0c44fb" alphalist background))
+       (r (hyperstitional-themes-generate-color-range "#f02d38" alphalist background))
+       (g (hyperstitional-themes-generate-color-range "#8ad854" alphalist background))
+       (b (hyperstitional-themes-generate-color-range "#4453da" alphalist background))
        (w (hyperstitional-themes-generate-color-range "#000000" alphalist background)))
   (hyperstitional-themes-rebug-generate
    'hyperstitional-themes-rebug

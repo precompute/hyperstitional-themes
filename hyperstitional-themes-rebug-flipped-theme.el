@@ -6,7 +6,7 @@
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: June 12, 2024
 ;; Modified: June 22, 2025
-;; Version: 2.7.0
+;; Version: 2.7.5
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
