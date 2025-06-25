@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: June 22, 2025
-;; Version: 2.7.6
+;; Modified: June 25, 2025
+;; Version: 2.7.7
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -1022,7 +1022,7 @@ Returns a color in hex as a string."
      `(org-upcoming-distant-deadline ((,class (:background ,bg :underline (:color ,we :style dots)))))
      `(org-verbatim                  ((,class (:foreground ,bc))))
      `(org-verse                     ((,class (:foreground ,wb :underline (:color ,wa :style dots)))))
-     `(org-warning                   ((,class (:foreground ,ra :background ,rg :underline (:color ,ra :line-width -1)))))
+     `(org-warning                   ((,class (:foreground ,ra :background ,rg :underline (:color ,ra :position 0)))))
 
 ;;;;;;; agenda
      `(org-agenda-calendar-event   ((,class (:foreground ,bb :underline (:style dots :position 0)))))
@@ -1053,14 +1053,14 @@ Returns a color in hex as a string."
      `(org-checkbox-statistics-todo ((,class (:foreground ,ba :background ,bg))))
 
 ;;;;;;; level
-     `(org-level-1 ((,class (:foreground ,ba :background ,bg :inherit variable-pitch :extend t))))
-     `(org-level-2 ((,class (:foreground ,ga :background ,gg :inherit variable-pitch :extend t))))
-     `(org-level-3 ((,class (:foreground ,ra :background ,rg :inherit variable-pitch :extend t))))
-     `(org-level-4 ((,class (:foreground ,bc :background ,bg :inherit variable-pitch :extend t))))
-     `(org-level-5 ((,class (:foreground ,gc :background ,gg :inherit variable-pitch :extend t))))
-     `(org-level-6 ((,class (:foreground ,rc :background ,rg :inherit variable-pitch :extend t))))
-     `(org-level-7 ((,class (:foreground ,be :background ,bg :inherit variable-pitch :extend t))))
-     `(org-level-8 ((,class (:foreground ,ge :background ,gg :inherit variable-pitch :extend t))))
+     `(org-level-1 ((,class (:foreground ,ba :inherit variable-pitch :extend t))))
+     `(org-level-2 ((,class (:foreground ,ga :inherit variable-pitch :extend t))))
+     `(org-level-3 ((,class (:foreground ,ra :inherit variable-pitch :extend t))))
+     `(org-level-4 ((,class (:foreground ,bc :inherit variable-pitch :extend t))))
+     `(org-level-5 ((,class (:foreground ,gc :inherit variable-pitch :extend t))))
+     `(org-level-6 ((,class (:foreground ,rc :inherit variable-pitch :extend t))))
+     `(org-level-7 ((,class (:foreground ,be :inherit variable-pitch :extend t))))
+     `(org-level-8 ((,class (:foreground ,ge :inherit variable-pitch :extend t))))
 
 ;;;;;; markdown
      `(markdown-header-face-1 ((,class :inherit outline-1)))
@@ -1133,7 +1133,7 @@ Returns a color in hex as a string."
      `(transient-unreachable-key   ((,class (:foreground ,we))))
 
 ;;;;;; magit
-     `(magit-section-heading        ((,class (:foreground ,ra :background ,gg :inherit variable-pitch :underline (:color ,ra :style dots) :extend t))))
+     ;; `(magit-section-heading        ((,class (:foreground ,ra :background ,gg :inherit variable-pitch :underline (:color ,ra :style dots) :extend t))))
      `(magit-section-highlight      ((,class (:background ,bg))))
      `(magit-hash                   ((,class (:foreground ,rc :background ,bg :weight bold))))
      `(magit-branch-local           ((,class (:foreground ,rd :background ,bg :inherit variable-pitch))))
@@ -1168,7 +1168,7 @@ Returns a color in hex as a string."
      `(orderless-match-face-3 ((,class (:background ,wg :weight bold :underline ,wd))))
 
 ;;;;;; vertico
-     `(vertico-current     ((,class (:underline (:line-width -1 :color ,ra :style dots)))))
+     `(vertico-current     ((,class (:underline (:position 0 :color ,ra :style dots)))))
      `(vertico-group-title ((,class (:foreground ,ra :background ,rg :inherit variable-pitch))))
      `(vertico-quick1      ((,class (:background ,ba :foreground ,bg))))
      `(vertico-quick2      ((,class (:background ,ga :foreground ,gg))))
@@ -1184,9 +1184,9 @@ Returns a color in hex as a string."
      `(ediff-even-diff-A ((,class (:background ,gd))))
 
 ;;;;;; flycheck
-     `(flycheck-info    ((,class (:underline (:line-width -1 :color ,gc)))))
-     `(flycheck-error   ((,class (:underline (:line-width -1 :color ,rc)))))
-     `(flycheck-warning ((,class (:underline (:line-width -1 :color ,bc)))))
+     `(flycheck-info    ((,class (:underline (:position 0 :color ,gc)))))
+     `(flycheck-error   ((,class (:underline (:position 0 :color ,rc)))))
+     `(flycheck-warning ((,class (:underline (:position 0 :color ,bc)))))
 
      `(flycheck-posframe-face            ((,class (:inherit popup-tip-face))))
      `(flycheck-posframe-info-face       ((,class (:inherit (popup-tip-face variable-pitch flycheck-info) :foreground ,gc))))
@@ -1225,9 +1225,9 @@ Returns a color in hex as a string."
      `(highlight-indentation-current-column-face ((,class (:background ,wf))))
 
 ;;;;;; writegood
-     `(writegood-weasels-face       ((,class (:underline (:line-width -1 :color ,rg)))))
-     `(writegood-duplicates-face    ((,class (:underline (:line-width -1 :color ,bg)))))
-     `(writegood-passive-voice-face ((,class (:underline (:line-width -1 :color ,gg)))))
+     `(writegood-weasels-face       ((,class (:underline (:position 0 :color ,rg)))))
+     `(writegood-duplicates-face    ((,class (:underline (:position 0 :color ,bg)))))
+     `(writegood-passive-voice-face ((,class (:underline (:position 0 :color ,gg)))))
 
 ;;;;;; eglot
      `(eglot-highlight-symbol-face  ((,class (:foreground ,rb :background ,bf :weight bold))))
