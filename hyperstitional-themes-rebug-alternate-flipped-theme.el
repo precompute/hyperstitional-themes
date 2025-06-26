@@ -1,4 +1,4 @@
-;;; hyperstitional-themes-rebug-flipped-theme.el --- Digital Bug, Flipped. -*- lexical-binding: t; -*-
+;;; hyperstitional-themes-rebug-alternate-flipped-theme.el --- Digital Bug, Flipped. Alternate Version.-*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2025 precompute
 
@@ -22,12 +22,12 @@
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-;; Digital Bug, Flipped.
+;; Digital Bug, Flipped.  Alternate version.
 
 ;;; Code:
 (require 'hyperstitional-themes)
 
-(deftheme hyperstitional-themes-rebug-flipped
+(deftheme hyperstitional-themes-rebug-alternate-flipped
   "Digital Bug, Flipped."
   :background-mode 'dark
   :kind 'color-scheme
@@ -35,14 +35,14 @@
 
 (let* ((alphalist '(1.0 0.873 0.728 0.582 0.436 0.291 0.145))
        (background "#000000")
-       (r (hyperstitional-themes-generate-color-range "#e11e2c" alphalist background))
-       (g (hyperstitional-themes-generate-color-range "#73c242" alphalist background))
-       (b (hyperstitional-themes-generate-color-range "#0c44fb" alphalist background))
+       (r (hyperstitional-themes-generate-color-range "#9221e1" alphalist background))
+       (g (hyperstitional-themes-generate-color-range "#3cc2bb" alphalist background))
+       (b (hyperstitional-themes-generate-color-range "#fbcb2e" alphalist background));; "#fb772c"
        (w (hyperstitional-themes-generate-color-range "#ffffff" alphalist background)))
   (hyperstitional-themes-rebug-generate
-   'hyperstitional-themes-rebug-flipped
+   'hyperstitional-themes-rebug-alternate-flipped
    r g b w background))
 
-(provide-theme 'hyperstitional-themes-rebug-flipped)
+(provide-theme 'hyperstitional-themes-rebug-alternate-flipped)
 
-;;; hyperstitional-themes-rebug-flipped-theme.el ends here
+;;; hyperstitional-themes-rebug-alternate-flipped-theme.el ends here
