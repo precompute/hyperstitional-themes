@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: June 25, 2025
-;; Version: 2.7.7
+;; Modified: June 26, 2025
+;; Version: 2.8.0
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -793,14 +793,14 @@ Returns a color in hex as a string."
      `(highlight            ((,class (:background ,bd))))
      `(match                ((,class (:foreground ,ga :background ,gg :slant italic))))
      `(menu                 ((,class (:foreground ,rf))))
-     `(minibuffer-prompt    ((,class (:foreground ,gf :slant italic))))
-     `(read-multiple-choice ((,class (:foreground ,gf :slant italic))))
+     `(minibuffer-prompt    ((,class (:foreground ,ba :background ,rg))))
+     `(read-multiple-choice ((,class (:foreground ,ba :background ,rg))))
      `(region               ((,class (:background ,rg))))
      `(secondary-selection  ((,class (:background ,bg))))
      `(shadow               ((,class (:foreground ,we))))
      `(success              ((,class (:foreground ,ga))))
      `(warning              ((,class (:foreground ,ba))))
-     `(cursor               ((,class (:background ,ga :underline (:color ,rc)))))
+     `(cursor               ((,class (:background ,ra))))
      `(whitespace-tab       ((,class (:background ,gg))))
      `(escape-glyph         ((,class (:foreground ,re))))
      `(fill-column-indicator ((,class (:foreground ,gg))))
