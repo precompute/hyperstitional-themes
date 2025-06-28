@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: June 27, 2025
-;; Version: 3.0.0
+;; Modified: June 28, 2025
+;; Version: 3.1.0
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -642,6 +642,9 @@ Returns a color in hex as a string."
 
 ;;;;;; eglot
      `(eglot-highlight-symbol-face  ((,class (:background ,c1-light :inherit bold))))
+     `(eglot-inlay-hint-face  ((,class (:foreground ,c0 :background ,c0-light :weight bold :box (:line-width -1 :color ,c0)))))
+     `(eglot-type-hint-face  ((,class (:foreground ,c6 :background ,c0-light :weight bold :box (:line-width -1 :color ,c0)))))
+     `(eglot-parameter-hint-face  ((,class (:foreground ,c3 :background ,c0-light :weight bold :box (:line-width -1 :color ,c0)))))
 
 ;;;;;; lsp-mode
      `(lsp-ui-peek-list ((,class :background ,c0-light)))
@@ -1231,6 +1234,9 @@ Returns a color in hex as a string."
 
 ;;;;;; eglot
      `(eglot-highlight-symbol-face  ((,class (:foreground ,rb :background ,bf :weight bold))))
+     `(eglot-inlay-hint-face  ((,class (:foreground ,bd :background ,bg :weight bold :box (:line-width -1 :color ,bd)))))
+     `(eglot-type-hint-face  ((,class (:foreground ,rd :background ,bg :weight bold :box (:line-width -1 :color ,bd)))))
+     `(eglot-parameter-hint-face  ((,class (:foreground ,gd :background ,bg :weight bold :box (:line-width -1 :color ,bd)))))
 
 ;;;;;; rjsx
      `(rjsx-tag-bracket-face ((,class :inherit font-lock-keyword-face)))
