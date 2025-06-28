@@ -1002,7 +1002,7 @@ Returns a color in hex as a string."
      `(org-link                      ((,class (:foreground ,ba :background ,rg :underline ,ba))))
      `(org-list-dt                   ((,class (:background ,bf :underline (:color ,bb :style dots :position 0)))))
      `(org-macro                     ((,class (:foreground ,ra :underline ,ba))))
-     `(org-meta-line                 ((,class (:foreground ,wb))))
+     `(org-meta-line                 ((,class (:foreground ,wb :background ,rg :box (:line-width -1 :color ,ra)))))
      `(org-mode-line-clock           ((,class (:foreground ,rc :weight bold))))
      `(org-mode-line-clock-overrun   ((,class (:foreground ,rb :background ,rg :weight bold))))
      `(org-priority                  ((,class (:foreground ,ba :background ,bg :weight bold))))
