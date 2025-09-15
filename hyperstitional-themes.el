@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: June 28, 2025
-;; Version: 3.1.0
+;; Modified: September 15, 2025
+;; Version: 3.1.1
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -991,14 +991,14 @@ Returns a color in hex as a string."
      `(org-document-info             ((,class (:foreground ,rb :background ,bg))))
      `(org-document-info-keyword     ((,class (:foreground ,rc :background ,bg))))
      `(org-document-title            ((,class (:foreground ,bb :background ,bg :weight bold))))
-     `(org-todo                      ((,class (:background ,bg :underline (:color ,ba :style double-line)))))
-     `(org-done                      ((,class (:background ,gg :underline (:color ,ga :style double-line)))))
+     `(org-todo                      ((,class (:background ,ww :foreground ,ba :inherit fixed-pitch :box (:line-width 2 :color ,bc) :weight bold))))
+     `(org-done                      ((,class (:background ,ww :foreground ,ga :inherit fixed-pitch :box (:line-width 2 :color ,gc) :weight bold))))
      `(org-drawer                    ((,class (:foreground ,rd :background ,rg :weight bold :box ,ra))))
      `(org-ellipsis                  ((,class (:height 1.2 :weight bold :foreground ,gc))))
      `(org-footnote                  ((,class (:foreground ,rc :underline ,ra))))
      `(org-formula                   ((,class (:foreground ,bc))))
-     `(org-headline-todo             ((,class (:inherit org-todo))))
-     `(org-headline-done             ((,class (:inherit org-done))))
+     `(org-headline-todo             ((,class (:background ,bg :underline (:color ,bc :style double-line)))))
+     `(org-headline-done             ((,class (:background ,gg :underline (:color ,gc :style double-line)))))
      `(org-hide                      ((,class (:foreground ,ww))))
      `(org-indent                    ((,class (:foreground ,wd))))
      `(org-latex-and-related         ((,class (:foreground ,wb))))
