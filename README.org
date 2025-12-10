@@ -12,11 +12,13 @@ I happen to like certain colors more than others and figured I’d just skip the
 /Mostly/.  It is completely legible to me, but I don’t mind weird / bad contrast ratios.
 
 - Digitalsear :: I did tweak the two primary colors with the  [[https://www.myndex.com/APCA/][ACPA Contrast Calculator]] to get a half-satisfactory score on most of the color stops and between the different variants.
-
+- Rebug :: Eyeballed, but thoroughly.
+  
 ** Motivation?
 
 - Digitalsear :: The theme I use the most is [[https://github.com/precompute/sculpture-themes][Sculpture-themes-dark]].  The light variant is undermaintained, because I know I’ll have to modify a lot of colors and will end up maintaining two very different versions of the same theme.  The dark version is what I really set out to make.  So, I decided to make a theme that’s primarily a light theme, but can be inverted to be a dark theme.
-
+- Rebug :: I wanted a theme that used three simple colors in generated grades.  This would make generating alternate color-schemes easier.  This allows modifying the base palette to generate a completely different theme.
+  
 ** Themes
 *** Digitalsear
 Digitalsear has two versions: *Digitalsear* and *Digitalsear Inverted*.
@@ -39,6 +41,18 @@ Distinguishability was important, because I was going to invert the theme.
 *Digitalsear Inverted* uses an inverted palette.  I’ve only duplicated the primary theme, inverted all the colors and changed the name.
 
 #+HTML: <img src="images/digitalsear-palette-inverted.png" align="center">
+
+*** Rebug
+
+Themes generated from a four color: R, G, B and K.  Colors are generated from a list of Alpha values.
+
+Four themes:
+- Rebug
+- Rebug Flipped
+- Rebug Alternate 
+- Rebug Alternate Flipped
+
+TODO: Description and Screenshots
 
 *** Planned themes
 - Something forest-green
