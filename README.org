@@ -46,16 +46,18 @@ Distinguishability was important, because I was going to invert the theme.
 
 Themes generated from a four color: R, G, B and K.  Colors are generated from a list of Alpha values.
 
-Four themes:
+Six themes:
 - Rebug
 - Rebug Flipped
 - Rebug Alternate 
 - Rebug Alternate Flipped
+- Rebug Lawn Lush
+- Rebug Lawn Sere
 
 TODO: Description and Screenshots
 
 *** Planned themes
-- Something forest-green
+- +Something forest-green+
 - Something sun-yellow
 
 ** Screenshots
