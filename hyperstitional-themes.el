@@ -563,6 +563,11 @@ Returns a color in hex as a string."
      `(vertico-group-title ((,class (:foreground ,c6 :background ,c6-light :inherit variable-pitch))))
      `(vertico-quick1      ((,class (:background ,c0-light :foreground ,c0))))
      `(vertico-quick2      ((,class (:background ,c6-light :foreground ,c6))))
+     `(vertico-posframe-border ((,class (:background ,c6))))
+     `(vertico-posframe-border-2 ((,class (:background ,c4))))
+     `(vertico-posframe-border-3 ((,class (:background ,c2))))
+     `(vertico-posframe-border-4 ((,class (:background ,c0))))
+     `(vertico-posframe-border-fallback ((,class (:background ,c1))))
 
 ;;;;;; olivetti
      `(olivetti-fringe ((,class (:background ,bg))))
@@ -1175,6 +1180,11 @@ Returns a color in hex as a string."
      `(vertico-group-title ((,class (:foreground ,ra :background ,rg :inherit variable-pitch))))
      `(vertico-quick1      ((,class (:background ,ba :foreground ,bg))))
      `(vertico-quick2      ((,class (:background ,ga :foreground ,gg))))
+     `(vertico-posframe-border ((,class (:background ,ra))))
+     `(vertico-posframe-border-2 ((,class (:background ,ga))))
+     `(vertico-posframe-border-3 ((,class (:background ,ba))))
+     `(vertico-posframe-border-4 ((,class (:background ,wa))))
+     `(vertico-posframe-border-fallback ((,class (:background ,gd))))
 
 ;;;;;; ediff
      `(ediff-odd-diff-Ancestor ((,class (:background ,rg))))
