@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: September 15, 2025
-;; Version: 3.1.1
+;; Modified: January 13, 2026
+;; Version: 3.2.2
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -788,10 +788,10 @@ Returns a color in hex as a string."
     (custom-theme-set-faces
      theme-name
      `(fringe                     ((,class (:background ,ww))))
-     `(vertical-border            ((,class (:background ,ww :foreground ,ww))))
-     `(window-divider             ((,class (:background ,ww :foreground ,ww))))
-     `(window-divider-first-pixel ((,class (:background ,ww :foreground ,ww))))
-     `(window-divider-last-pixel  ((,class (:background ,ww :foreground ,ww))))
+     `(vertical-border            ((,class (:background ,ra :foreground ,ra))))
+     `(window-divider             ((,class (:background ,ra :foreground ,ra))))
+     `(window-divider-first-pixel ((,class (:background ,ra :foreground ,ra))))
+     `(window-divider-last-pixel  ((,class (:background ,ra :foreground ,ra))))
 
      `(default ((,class (:foreground ,wa :background ,ww))))
      `(button  ((,class (:background ,be :foreground ,wc :box (:line-width 2 :color ,bb :style released-button)))))
