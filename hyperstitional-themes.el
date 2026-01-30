@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: January 13, 2026
-;; Version: 3.2.2
+;; Modified: January 30, 2026
+;; Version: 3.3
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -159,11 +159,11 @@ Returns a color in hex as a string."
      `(font-lock-regexp-grouping-backslash ((,class (:foreground ,c0-dim))))
 
 ;;;;;; Header line and mode line
-     `(mode-line             ((,class (:inherit variable-pitch :foreground ,c0 :background ,c6))))
-     `(mode-line-buffer-id   ((,class (:inherit variable-pitch :foreground ,c1 :background ,c6))))
-     `(mode-line-emphasis    ((,class (:inherit variable-pitch :foreground ,c2 :background ,c6))))
-     `(mode-line-highlight   ((,class (:inherit variable-pitch :foreground ,c3 :background ,c6-light))))
-     `(mode-line-inactive    ((,class (:inherit variable-pitch :foreground ,c4 :background ,c6-dim))))
+     `(mode-line             ((,class (:foreground ,c0 :background ,c6))))
+     `(mode-line-buffer-id   ((,class (:foreground ,c1 :background ,c6))))
+     `(mode-line-emphasis    ((,class (:foreground ,c2 :background ,c6))))
+     `(mode-line-highlight   ((,class (:foreground ,c3 :background ,c6-light))))
+     `(mode-line-inactive    ((,class (:foreground ,c4 :background ,c6-dim))))
      `(header-line           ((,class (:inherit mode-line))))
      `(header-line-inactive  ((,class (:inherit mode-line-inactive))))
      `(header-line-highlight ((,class (:inherit mode-line-highlight))))
@@ -851,11 +851,11 @@ Returns a color in hex as a string."
      `(font-lock-regexp-grouping-backslash ((,class (:inherit font-lock-regexp-face :underline t))))
 
 ;;;;;; Header line and mode line
-     `(mode-line             ((,class (:inherit variable-pitch :foreground ,wb :background ,be))))
-     `(mode-line-buffer-id   ((,class (:inherit variable-pitch :foreground ,ba))))
-     `(mode-line-emphasis    ((,class (:inherit variable-pitch :foreground ,ra))))
-     `(mode-line-highlight   ((,class (:inherit variable-pitch :foreground ,ga))))
-     `(mode-line-inactive    ((,class (:inherit variable-pitch :foreground ,wb :background ,bg))))
+     `(mode-line             ((,class (:foreground ,wb :background ,be))))
+     `(mode-line-buffer-id   ((,class (:foreground ,ba))))
+     `(mode-line-emphasis    ((,class (:foreground ,ra))))
+     `(mode-line-highlight   ((,class (:foreground ,ga))))
+     `(mode-line-inactive    ((,class (:foreground ,wb :background ,bg))))
      `(header-line           ((,class (:inherit mode-line))))
      `(header-line-inactive  ((,class (:inherit mode-line-inactive))))
      `(header-line-highlight ((,class (:inherit mode-line-highlight))))
