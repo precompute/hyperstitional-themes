@@ -1,12 +1,12 @@
 ;;; hyperstitional-themes.el --- Weird themes with incremental palettes -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2025 precompute
+;; Copyright (C) 2026 precompute
 
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: February 15, 2026
-;; Version: 3.4
+;; Modified: July 01, 2026
+;; Version: 3.5
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -295,6 +295,10 @@ Returns a color in hex as a string."
      `(xref-match        ((,class (:background ,c6-light :underline (:color ,c0)))))
      `(xref-line-number  ((,class (:foreground ,c4-dim))))
      `(info-xref-visited ((,class (:underline (:color ,c2-dim)))))
+
+;;;;;; woman
+     `(woman-bold   ((,class (:foreground ,c6 :weight bold))))
+     `(woman-italic ((,class (:inherit italic :background ,c6-light))))
 
 ;;;;;; imenu-list
      `(imenu-list-entry-face            ((,class (:inherit variable-pitch :foreground ,fg))))
@@ -953,6 +957,10 @@ Returns a color in hex as a string."
      `(xref-file-header  ((,class (:foreground ,ba :weight bold :height 1.15 :inherit variable-pitch))))
      `(xref-match        ((,class (:foreground ,ba :background ,bg :underline t))))
      `(xref-line-number  ((,class (:foreground ,ga :weight bold))))
+
+;;;;;; woman
+     `(woman-bold   ((,class (:foreground ,ba :weight bold))))
+     `(woman-italic ((,class (:inherit italic :background ,gd))))
 
 ;;;;;; imenu-list
      `(imenu-list-entry-face            ((,class (:inherit variable-pitch :foreground ,ba :background ,bg))))
