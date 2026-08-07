@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: July 01, 2026
-;; Version: 3.5
+;; Modified: August 08, 2026
+;; Version: 3.6
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -432,6 +432,20 @@ Returns a color in hex as a string."
      `(show-paren-match            ((,class (:underline (:color ,c4-dim :line-width -1)))))
      `(show-paren-mismatch         ((,class (:underline (:color ,c6-dark :line-width -1)))))
      `(show-paren-match-expression ((,class (:background ,c6-light))))
+
+;;;;;; Whitespace Mode
+     `(whitespace-tab                    ((,class (:background ,c2-light :foreground ,c0))))
+     `(whitespace-line                   ((,class (:background ,c0-light :foreground ,c5))))
+     `(whitespace-empty                  ((,class (:background ,c6 :foreground ,c0))))
+     `(whitespace-space                  ((,class (:background ,c1-light :foreground ,c0))))
+     `(whitespace-hspace                 ((,class (:background ,c1-light :foreground ,c2))))
+     `(whitespace-newline                ((,class (:background ,c0-light :foreground ,c1-dim))))
+     `(whitespace-trailing               ((,class (:background ,c2-dim :foreground ,c5))))
+     `(whitespace-big-indent             ((,class (:background ,c2-dim :foreground ,bg))))
+     `(whitespace-indentation            ((,class (:background ,c3-dim :foreground ,c3))))
+     `(whitespace-space-after-tab        ((,class (:background ,c3-dim :foreground ,c3))))
+     `(whitespace-space-before-tab       ((,class (:background ,c4-dim :foreground ,c1))))
+     `(whitespace-missing-newline-at-eof ((,class (:background ,c5-dim :foreground ,c6))))
 
 ;;;;;; sh
      `(sh-heredoc ((,class (:foreground ,c1 :background ,c3-light))))
@@ -1093,6 +1107,20 @@ Returns a color in hex as a string."
      `(show-paren-mismatch         ((,class (:underline (:color ,rc :postion 0 :style dashes)))))
      `(show-paren-match-expression ((,class (:inherit show-paren-match))))
 
+;;;;;; Whitespace Mode
+     `(whitespace-tab                    ((,class (:background ,gg :foreground ,wb))))
+     `(whitespace-line                   ((,class (:background ,bf :foreground ,rc))))
+     `(whitespace-empty                  ((,class (:background ,bf :foreground ,rc))))
+     `(whitespace-space                  ((,class (:background ,gg :foreground ,ga))))
+     `(whitespace-hspace                 ((,class (:background ,gf :foreground ,ga))))
+     `(whitespace-newline                ((,class (:background ,gf :foreground ,be))))
+     `(whitespace-trailing               ((,class (:background ,rf :foreground ,wb))))
+     `(whitespace-big-indent             ((,class (:background ,rf :foreground ,wb))))
+     `(whitespace-indentation            ((,class (:background ,bf :foreground ,rd))))
+     `(whitespace-space-after-tab        ((,class (:background ,bf :foreground ,rd))))
+     `(whitespace-space-before-tab       ((,class (:background ,bd :foreground ,re))))
+     `(whitespace-missing-newline-at-eof ((,class (:background ,rd :foreground ,wb))))
+
 ;;;;;; sh
      `(sh-heredoc ((,class (:foreground ,rb :background ,bg))))
 
@@ -1178,10 +1206,10 @@ Returns a color in hex as a string."
      `(diff-refine-added   ((,class (:foreground ,ww :background ,ga))))
 
 ;;;;;; orderless
-     `(orderless-match-face-0 ((,class (:inverse-video t :background ,bg :weight bold :underline ,bd))))
-     `(orderless-match-face-1 ((,class (:inverse-video t :background ,rg :weight bold :underline ,rd))))
-     `(orderless-match-face-2 ((,class (:inverse-video t :background ,gg :weight bold :underline ,gd))))
-     `(orderless-match-face-3 ((,class (:inverse-video t :background ,wg :weight bold :underline ,wd))))
+     `(orderless-match-face-0 ((,class (:background ,bg :weight bold :underline ,bd))))
+     `(orderless-match-face-1 ((,class (:background ,rg :weight bold :underline ,rd))))
+     `(orderless-match-face-2 ((,class (:background ,gg :weight bold :underline ,gd))))
+     `(orderless-match-face-3 ((,class (:background ,wg :weight bold :underline ,wd))))
 
 ;;;;;; vertico
      `(vertico-current     ((,class (:underline (:position 0 :color ,ra :style dots)))))
