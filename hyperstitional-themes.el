@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: September 07, 2026
-;; Version: 3.9
+;; Modified: September 12, 2026
+;; Version: 3.10
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -203,6 +203,20 @@ Returns a color in hex as a string."
      `(evil-ex-substitute-matches     ((,class (:foreground ,c1-dim :strike-through t :inherit bold))))
      `(evil-ex-substitute-replacement ((,class (:foreground ,c4-dim :inherit bold))))
 
+;;;;;; dired
+     `(dired-mark           ((,class (:foreground ,c6 :inherit bold))))
+     `(dired-marked         ((,class (:foreground ,c6 :background ,c2-light :underline (:color ,c6 :style dashes) :inherit (bold italic)))))
+     `(dired-directory      ((,class (:foreground ,bg :background ,c6 :inherit bold :box (:color ,c6 :line-width (3 . -1)) ))))
+     `(dired-header         ((,class (:foreground ,bg :background ,c3-dim :box (:color ,c3-dim :line-width (6 . 3)) :inherit (variable-pitch bold) :height 1.15))))
+     `(dired-set-id         ((,class (:foreground ,bg :background ,c4-dim :inherit bold))))
+     `(dired-flagged        ((,class (:foreground ,bg :background ,c6-dark :inherit (bold italic)))))
+     `(dired-ignored        ((,class (:foreground ,c3-dark))))
+     `(dired-special        ((,class (:underline (:color ,c2 :style dots)))))
+     `(dired-warning        ((,class (:foreground ,c6-dark :background ,c1-light))))
+     `(dired-perm-write     ((,class (:foreground ,c1-dim :background ,c6-light :inherit italic))))
+     `(dired-symlink        ((,class (:underline (:color ,c4 :style dots)))))
+     `(dired-broken-symlink ((,class (:foreground ,c1-dark :underline (:color ,c4 :style dots)))))
+
 ;;;;;; diredfl
      `(diredfl-dir-name               ((,class (:foreground ,c6 :background ,c6-light :inherit (bold variable-pitch)))))
      `(diredfl-number                 ((,class (:foreground ,c1-dim))))
@@ -231,12 +245,12 @@ Returns a color in hex as a string."
      `(diredfl-compressed-file-suffix ((,class (:foreground ,c2-dim))))
 
 ;;;;;; dired-subtree
-     `(dired-subtree-depth-1-face ((,class (:background ,c6-light))))
-     `(dired-subtree-depth-2-face ((,class (:background ,c5-light))))
-     `(dired-subtree-depth-3-face ((,class (:background ,c4-light))))
-     `(dired-subtree-depth-4-face ((,class (:background ,c3-light))))
-     `(dired-subtree-depth-5-face ((,class (:background ,c2-light))))
-     `(dired-subtree-depth-6-face ((,class (:background ,c1-light))))
+     `(dired-subtree-depth-1-face ((,class (:overline (:color ,c6 :line-height 3)))))
+     `(dired-subtree-depth-2-face ((,class (:overline (:color ,c5 :line-height 3)))))
+     `(dired-subtree-depth-3-face ((,class (:overline (:color ,c4 :line-height 3)))))
+     `(dired-subtree-depth-4-face ((,class (:overline (:color ,c3 :line-height 3)))))
+     `(dired-subtree-depth-5-face ((,class (:overline (:color ,c2 :line-height 3)))))
+     `(dired-subtree-depth-6-face ((,class (:overline (:color ,c1 :line-height 3)))))
 
 ;;;;;; Ivy
      `(ivy-action                      ((,class (:foreground ,fg :slant italic))))
@@ -918,6 +932,20 @@ Returns a color in hex as a string."
      `(evil-ex-search                 ((,class (:foreground ,gc :background ,rg :weight bold))))
      `(evil-ex-substitute-matches     ((,class (:foreground ,ra :strike-through t :weight bold))))
      `(evil-ex-substitute-replacement ((,class (:foreground ,ga :weight bold))))
+
+;;;;;; dired
+     `(dired-mark           ((,class (:foreground ,ba :inherit bold))))
+     `(dired-marked         ((,class (:foreground ,ga :underline (:color ,ga :style dashes) :inherit (bold italic)))))
+     `(dired-directory      ((,class (:foreground ,ba :background ,bg :inherit bold :box (:color ,bg :line-width (3 . -1)) ))))
+     `(dired-header         ((,class (:foreground ,ww :background ,gc :box (:color ,gc :line-width (6 . 3)) :inherit (variable-pitch bold) :height 1.15))))
+     `(dired-set-id         ((,class (:foreground ,ba :background ,bg :inherit bold))))
+     `(dired-flagged        ((,class (:foreground ,ra :underline (:color ,ra :style dashes) :inherit (bold italic)))))
+     `(dired-warning        ((,class (:foreground ,ra :background ,rg :inherit (bold italic)))))
+     `(dired-ignored        ((,class (:foreground ,bc))))
+     `(dired-special        ((,class (:underline (:color ,bg :style dots)))))
+     `(dired-perm-write     ((,class (:foreground ,ga :background ,gg :inherit italic))))
+     `(dired-symlink        ((,class (:underline (:color ,wf :style dots)))))
+     `(dired-broken-symlink ((,class (:foreground ,re :underline (:color ,wf :style dots)))))
 
 ;;;;;; diredfl
      `(diredfl-dir-name               ((,class (:foreground ,ra :background ,rg :weight bold :inherit variable-pitch))))
