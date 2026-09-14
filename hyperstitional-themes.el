@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: September 12, 2026
-;; Version: 3.10
+;; Modified: September 14, 2026
+;; Version: 3.11
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -876,7 +876,7 @@ Returns a color in hex as a string."
      `(font-lock-comment-face              ((,class (:foreground ,bb :background ,bg))))
      `(font-lock-comment-delimiter-face    ((,class (:foreground ,bb :background ,bg :weight bold))))
      `(font-lock-constant-face             ((,class (:foreground ,ba :weight bold))))
-     `(font-lock-function-name-face        ((,class (:foreground ,ra :slant italic))))
+     `(font-lock-function-name-face        ((,class (:foreground ,ra :slant italic :weight bold))))
      `(font-lock-keyword-face              ((,class (:foreground ,rb :weight bold))))
      `(font-lock-string-face               ((,class (:foreground ,bb :underline (:color ,bb :style dots :position 0)))))
      `(font-lock-type-face                 ((,class (:foreground ,gb :underline (:color ,gb :style dots :position 0)))))
@@ -1337,6 +1337,7 @@ Returns a color in hex as a string."
      `(eglot-inlay-hint-face  ((,class (:foreground ,bd :background ,bg :weight bold :box (:line-width -1 :color ,bd)))))
      `(eglot-type-hint-face  ((,class (:foreground ,rd :background ,bg :weight bold :box (:line-width -1 :color ,bd)))))
      `(eglot-parameter-hint-face  ((,class (:foreground ,gd :background ,bg :weight bold :box (:line-width -1 :color ,bd)))))
+     `(eglot-semantic-operator ((,class (:inherit font-lock-function-name-face :slant normal))))
 
 ;;;;;; rjsx
      `(rjsx-tag-bracket-face ((,class :inherit font-lock-keyword-face)))
