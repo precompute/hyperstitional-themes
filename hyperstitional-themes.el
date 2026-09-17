@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: September 14, 2026
-;; Version: 3.11
+;; Modified: September 17, 2026
+;; Version: 3.12
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -323,6 +323,24 @@ Returns a color in hex as a string."
 ;;;;;; woman
      `(woman-bold   ((,class (:foreground ,c6 :weight bold))))
      `(woman-italic ((,class (:inherit italic :background ,c6-light))))
+
+;;;;;; ansi-color
+     `(ansi-color-black   ((,class (:foreground ,c0-dark))))
+     `(ansi-color-red     ((,class (:foreground ,c4))))
+     `(ansi-color-green   ((,class (:foreground ,c2))))
+     `(ansi-color-yellow  ((,class (:foreground ,c6))))
+     `(ansi-color-blue    ((,class (:foreground ,c0))))
+     `(ansi-color-magenta ((,class (:foreground ,c3))))
+     `(ansi-color-cyan    ((,class (:foreground ,c1))))
+     `(ansi-color-white   ((,class (:foreground ,c5))))
+     `(ansi-color-bright-black   ((,class (:foreground ,fg))))
+     `(ansi-color-bright-red     ((,class (:foreground ,c4-light))))
+     `(ansi-color-bright-green   ((,class (:foreground ,c2-light))))
+     `(ansi-color-bright-yellow  ((,class (:foreground ,c6-light))))
+     `(ansi-color-bright-blue    ((,class (:foreground ,c0-light))))
+     `(ansi-color-bright-magenta ((,class (:foreground ,c3-light))))
+     `(ansi-color-bright-cyan    ((,class (:foreground ,c1-light))))
+     `(ansi-color-bright-white   ((,class (:foreground ,c5-light))))
 
 ;;;;;; imenu-list
      `(imenu-list-entry-face            ((,class (:inherit variable-pitch :foreground ,fg))))
@@ -1015,6 +1033,24 @@ Returns a color in hex as a string."
 ;;;;;; woman
      `(woman-bold   ((,class (:foreground ,ba :weight bold))))
      `(woman-italic ((,class (:inherit italic :background ,gd))))
+
+;;;;;; ansi-color
+     `(ansi-color-black   ((,class (:foreground ,wb))))
+     `(ansi-color-red     ((,class (:foreground ,rc))))
+     `(ansi-color-green   ((,class (:foreground ,gc))))
+     `(ansi-color-yellow  ((,class (:foreground ,gf))))
+     `(ansi-color-blue    ((,class (:foreground ,bc))))
+     `(ansi-color-magenta ((,class (:foreground ,rf))))
+     `(ansi-color-cyan    ((,class (:foreground ,bf))))
+     `(ansi-color-white   ((,class (:foreground ,wd))))
+     `(ansi-color-bright-black   ((,class (:foreground ,wa))))
+     `(ansi-color-bright-red     ((,class (:foreground ,ra))))
+     `(ansi-color-bright-green   ((,class (:foreground ,ga))))
+     `(ansi-color-bright-yellow  ((,class (:foreground ,gd))))
+     `(ansi-color-bright-blue    ((,class (:foreground ,ba))))
+     `(ansi-color-bright-magenta ((,class (:foreground ,rd))))
+     `(ansi-color-bright-cyan    ((,class (:foreground ,bd))))
+     `(ansi-color-bright-white   ((,class (:foreground ,wd))))
 
 ;;;;;; imenu-list
      `(imenu-list-entry-face            ((,class (:inherit variable-pitch :foreground ,ba :background ,bg))))
