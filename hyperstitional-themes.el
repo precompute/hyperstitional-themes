@@ -5,8 +5,8 @@
 ;; Author: precompute <git@precompute.net>
 ;; URL: https://github.com/precompute/hyperstitional-themes
 ;; Created: April 16, 2024
-;; Modified: September 17, 2026
-;; Version: 3.12
+;; Modified: September 19, 2026
+;; Version: 3.13
 ;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
@@ -631,6 +631,12 @@ Returns a color in hex as a string."
      `(ediff-even-diff-C ((,class (:background ,c4-light))))
      `(ediff-even-diff-B ((,class (:background ,c2-light))))
      `(ediff-even-diff-A ((,class (:background ,c0-light))))
+
+;;;;;; Hyperbole
+     `(ibut-face      ((,class (:background ,c6-light :foreground ,c0-dark :box (:line-width (3 . 3) :color ,c0-dark :style released-button)))))
+     `(hbut-flash     ((,class (:background ,c6-light :foreground ,c2-dark :box (:line-width (3 . 3) :color ,c0-dark :style released-button)))))
+     `(hbut-face      ((,class (:background ,c6-light :foreground ,c4-dark :box (:line-width (3 . 3) :color ,c0-dark :style released-button)))))
+     `(hbut-item-face ((,class (:background ,c6-light :foreground ,c6-dark :box (:line-width (3 . 3) :color ,c0-dark :style released-button)))))
 
 ;;;;;; vertico
      `(vertico-current     ((,class (:underline (:line-width -1 :color ,c5) :inherit bold))))
@@ -1321,6 +1327,12 @@ Returns a color in hex as a string."
      `(ediff-even-diff-C ((,class (:background ,gf))))
      `(ediff-even-diff-B ((,class (:background ,ge))))
      `(ediff-even-diff-A ((,class (:background ,gd))))
+
+;;;;;; Hyperbole
+     `(ibut-face      ((,class (:background ,gg :foreground ,ba :box (:line-width (3 . 3) :color ,ba :style released-button)))))
+     `(hbut-flash     ((,class (:background ,gg :foreground ,ra :box (:line-width (3 . 3) :color ,ba :style released-button)))))
+     `(hbut-face      ((,class (:background ,gg :foreground ,ga :box (:line-width (3 . 3) :color ,ba :style released-button)))))
+     `(hbut-item-face ((,class (:background ,gg :foreground ,gc :box (:line-width (3 . 3) :color ,ba :style released-button)))))
 
 ;;;;;; flycheck
      `(flycheck-info    ((,class (:underline (:position 0 :color ,gc)))))
